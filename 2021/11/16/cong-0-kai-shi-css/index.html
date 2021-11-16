@@ -404,9 +404,7 @@
 <li>浮动的盒子<strong>不再保留原来的位置</strong></li>
 <li>浮动的元素与定位不同，只会压住下面标准流动盒子，但是不会压住标准流盒子里的文字与图片（类似环绕效果）</li>
 <li>浮动的盒子在同一行顶端对齐，相互贴靠没有缝隙。但是<strong>注意如果父盒子的宽度装不下浮动盒子，多动盒子会另起一行对齐</strong></li>
-<li>浮动的元素具有行内块元素的特性，不用再<code>display:inline-block</code>,可以直接设置宽高。注意，块级盒子没有设置宽度时默认与父元素一样宽，但是添加浮动后<strong>大小根据浮动盒子的内容决定</strong>，这点与行内元素一样。<div style="width:400px">
-<img src="/2021/11/16/cong-0-kai-shi-css/css-06.png" class="">
-<div></li>
+<li>浮动的元素具有行内块元素的特性，不用再<code>display:inline-block</code>,可以直接设置宽高。注意，块级盒子没有设置宽度时默认与父元素一样宽，但是添加浮动后<strong>大小根据浮动盒子的内容决定</strong>，这点与行内元素一样。<img src="/2021/11/16/cong-0-kai-shi-css/css-06.png" class=""></li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        .box1 &#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            /* 脱标后位置被占有  */</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box2 &#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: blue;</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 

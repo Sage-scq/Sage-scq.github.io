@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从0开始css-01-圆角边框, Sage的博客">
+    <meta name="keywords" content="从0开始css, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从0开始css-01-圆角边框 | Sage的博客</title>
+    <title>从0开始css | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -181,12 +181,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从0开始css-01-圆角边框</h1>
+                    <h1 class="description center-align post-title">从0开始css</h1>
                 </div>
             </div>
         </div>
@@ -341,7 +341,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    286
                 </div>
                 
 
@@ -363,16 +363,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
+                <h1 id="从0开始css"><a href="#从0开始css" class="headerlink" title="从0开始css"></a>从0开始css</h1><h2 id="1-圆角边框"><a href="#1-圆角边框" class="headerlink" title="1.圆角边框"></a>1.圆角边框</h2><ul>
 <li>圆角边框可以通过css的属性<code>border-radius：length</code>来实现，其中的length为圆形与直角边相切半径</li>
 <li>圆形盒子半径设为正方形一半即可，写 50%</li>
 <li>圆角矩形设置为高度的50%</li>
 </ul>
 <blockquote>
-<p>注意该属性为css新增，可能有兼容性问题</p>
+<p>注意该属性为css3新增，可能有兼容性问题</p>
 </blockquote>
-<img src="/2021/11/16/cong-0-kai-shi-css-01/css-01.png" class="">
+<img src="/2021/11/16/cong-0-kai-shi-css/css-01.png" class="">
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    /* 圆角矩形做法 */</span><br><span class="line">    div.demo1 &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 150px;</span><br><span class="line">        background-color: pink;</span><br><span class="line">        /* 圆角 */</span><br><span class="line">        border-radius: 75px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* 圆形做法 */</span><br><span class="line">    div.demo2 &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 300px;</span><br><span class="line">        background-color: pink;</span><br><span class="line">        /* border-radius: 150px; */</span><br><span class="line">        border-radius: 50%;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* 不同圆角做法 */</span><br><span class="line">    div.demo3 &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 300px;</span><br><span class="line">        background-color: pink;</span><br><span class="line">        /* border-radius: 150px; */</span><br><span class="line">        border-radius: 10px 20px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-盒子阴影"><a href="#2-盒子阴影" class="headerlink" title="2.盒子阴影"></a>2.盒子阴影</h2><ul>
+<li>1.默认outset但是不要写，否则失效。</li>
+<li>2.<em>盒子阴影不占用空间，不影响其他盒子排列</em></li>
+<li>3.鼠标经过出现影子:hover做<img src="/2021/11/16/cong-0-kai-shi-css/css-02.png" class=""></li>
+</ul>
+<blockquote>
+<p>该属性为css3新增</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        div:hover &#123;</span><br><span class="line">            box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-文字阴影"><a href="#3-文字阴影" class="headerlink" title="3.文字阴影"></a>3.文字阴影</h2><img src="/2021/11/16/cong-0-kai-shi-css/css-03.png" class="">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            font-size: 50px;</span><br><span class="line">            color: orange;</span><br><span class="line">            font-weight: 700;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        div:hover &#123;</span><br><span class="line">            text-shadow: 5px 5px 6px rgba(0, 0, 0, .3);</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -398,7 +410,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/2021/11/16/cong-0-kai-shi-css-01/">https://sage-scq.github.io/2021/11/16/cong-0-kai-shi-css-01/</a>
+                    <a href="https://sage-scq.github.io/2021/11/16/cong-0-kai-shi-css/">https://sage-scq.github.io/2021/11/16/cong-0-kai-shi-css/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,13 +624,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/11/16/cong-0-kai-shi-css-01/">
+                <a href="/2021/11/16/cong-0-kai-shi-css/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="从0开始css-01-圆角边框">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="从0开始css">
                         
-                        <span class="card-title">从0开始css-01-圆角边框</span>
+                        <span class="card-title">从0开始css</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -937,7 +949,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">620</span>&nbsp;字
+                class="white-color">755</span>&nbsp;字
             
             
             

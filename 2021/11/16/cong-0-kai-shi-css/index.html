@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    8 分
                 </div>
                 
 
@@ -453,7 +453,7 @@
 <h2 id="5-标准流"><a href="#5-标准流" class="headerlink" title="5.标准流"></a>5.标准流</h2><img src="/2021/11/16/cong-0-kai-shi-css/css-04.png" class="">
 <hr>
 <h2 id="6-浮动"><a href="#6-浮动" class="headerlink" title="6.浮动"></a>6.浮动</h2><img src="/2021/11/16/cong-0-kai-shi-css/css-05.png" class="">
-<hr>
+
 <h3 id="6-1浮动特性"><a href="#6-1浮动特性" class="headerlink" title="6.1浮动特性"></a>6.1浮动特性</h3><ol>
 <li><strong>浮动元素会脱离标准流（脱标）</strong>，即脱离标准流的控制（浮）移动到指定位置（动）</li>
 <li>浮动的元素会一行内显示并且元素顶部对齐</li>
@@ -478,17 +478,15 @@
             background-color: blue;
         &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
+
 <h3 id="6-2浮动元素搭配标准流父级元素"><a href="#6-2浮动元素搭配标准流父级元素" class="headerlink" title="6.2浮动元素搭配标准流父级元素"></a>6.2浮动元素搭配标准流父级元素</h3><ul>
 <li>为了约束元素的位置我们通常采用先用标准流的父元素排列上下位置，再在内部使用浮动进行左右位置的排列<img src="/2021/11/16/cong-0-kai-shi-css/css-07.png" class=""></li>
 </ul>
-<hr>
 <h3 id="6-3浮动布局的注意点"><a href="#6-3浮动布局的注意点" class="headerlink" title="6.3浮动布局的注意点"></a>6.3浮动布局的注意点</h3><ol>
 <li>先用标准流父元素上下排列，再在内部进行子元素浮动左右排列</li>
 <li>一个元素浮动了理论上其余兄弟元素也要浮动。所谓<strong>一浮全浮</strong>。</li>
 <li>浮动的盒子只影响后面的标准流盒子，不会影响之前的。</li>
 </ol>
-<hr>
 <h3 id="6-4清除浮动"><a href="#6-4清除浮动" class="headerlink" title="6.4清除浮动"></a>6.4清除浮动</h3><h4 id="6-4-1为什么要清除浮动"><a href="#6-4-1为什么要清除浮动" class="headerlink" title="6.4.1为什么要清除浮动"></a>6.4.1为什么要清除浮动</h4><p>由于父级盒子在很多情况下不方便设定高度，但是子盒子浮动不占有位置，导致父盒子会影响下面的标准流盒子。</p>
 <img src="/2021/11/16/cong-0-kai-shi-css/css-08.png" class="">
 
@@ -535,6 +533,87 @@
 <blockquote>
 <p>注意IE6-7不支持after，会有兼容性问题（但是IE已经快消失了，所以问题不大）</p>
 </blockquote>
+<hr>
+<h2 id="7-定位"><a href="#7-定位" class="headerlink" title="7.定位"></a>7.定位</h2><h3 id="7-1什么时候需要用定位"><a href="#7-1什么时候需要用定位" class="headerlink" title="7.1什么时候需要用定位"></a>7.1什么时候需要用定位</h3><p>浮动可以让多个块级盒子一行没有缝隙排列显示，常用于横向排列盒子。而定位是让盒子自由地在某个盒子内移动位置或者固定在屏幕的某个位置。</p>
+<h3 id="7-2定位的组成"><a href="#7-2定位的组成" class="headerlink" title="7.2定位的组成"></a>7.2定位的组成</h3><p>定位=定位模式+边偏移<br><strong>定位模式</strong>用于指定某个元素在文档中的定位方式。<strong>边偏移</strong>决定了该盒子的最终位置。</p>
+<h3 id="7-3-定位模式"><a href="#7-3-定位模式" class="headerlink" title="7.3 定位模式"></a>7.3 定位模式</h3><h4 id="7-3-1静态定位static（了解）"><a href="#7-3-1静态定位static（了解）" class="headerlink" title="7.3.1静态定位static（了解）"></a>7.3.1静态定位static（了解）</h4><p>静态定位是元素的默认定位方式，无定位的意思。</p>
+<ul>
+<li>静态定位按照标准流特性摆放位置，没有边偏移</li>
+<li>静态定位在布局中很少用到<pre class="line-numbers language-none"><code class="language-none">&lt;!-- div位置是选择器，下文同 --&gt;
+div &#123;
+    position:static;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-2相对定位relative（重要）"><a href="#7-3-2相对定位relative（重要）" class="headerlink" title="7.3.2相对定位relative（重要）"></a>7.3.2相对定位relative（重要）</h4><p>相对定位是元素在移动位置的时候，相对于它<strong>原来的位置</strong>来说的</p>
+<ul>
+<li>相对定位移动位置时的参照点是自己</li>
+<li>相对定位的盒子在标准流中的位置会<strong>继续占有</strong>，后面的盒子仍然以标准流的方式对待它（不会脱标）</li>
+<li>因为不会脱标，所以可以用<code>margin：auto</code>来进行水平居中对齐<pre class="line-numbers language-none"><code class="language-none">div &#123;
+    position:relative
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-3绝对定位absolute（重要）"><a href="#7-3-3绝对定位absolute（重要）" class="headerlink" title="7.3.3绝对定位absolute（重要）"></a>7.3.3绝对定位absolute（重要）</h4><p>绝对定位是元素移动位置的时候，是相对于它的<strong>祖先元素</strong>来的。</p>
+<ul>
+<li>如果<strong>没有祖先元素</strong>或者<strong>祖先元素</strong>没有定位，则该元素以浏览器为准定位</li>
+<li>如果祖先元素有定位（相对、绝对、固定定位），则以最近一级有定位的祖先元素为参考点移动位置</li>
+<li><strong>绝对定位不再占有原来的位置（脱标）</strong><pre class="line-numbers language-none"><code class="language-none">div &#123;
+    position:absolute;
+    top:50px;
+    left:50px
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-4固定定位fixed（重要）"><a href="#7-3-4固定定位fixed（重要）" class="headerlink" title="7.3.4固定定位fixed（重要）"></a>7.3.4固定定位fixed（重要）</h4><p>固定定位是元素固定于<strong>浏览器可视区</strong>的位置。主要使用场景：浏览器页面滚动时元素位置不产生变化</p>
+<ul>
+<li>固定定位以浏览器可视窗口为参照点移动元素，<strong>与父元素没有关系</strong>，<strong>不随滚动条滚动</strong></li>
+<li>固定定位也是<strong>脱标</strong>的，固定定位可以看作是一种特殊的绝对定位<pre class="line-numbers language-none"><code class="language-none">div &#123;
+    position:fixed;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-5粘性定位stiky（了解）"><a href="#7-3-5粘性定位stiky（了解）" class="headerlink" title="7.3.5粘性定位stiky（了解）"></a>7.3.5粘性定位stiky（了解）</h4><p>粘性定位可以看作是相对定位于固定定位的结合</p>
+<ul>
+<li>粘性定位以浏览器的可视窗口为参照点移动元素</li>
+<li>粘性定位<strong>不脱标</strong>，占有原先的位置</li>
+<li>必须添加至少一个偏移量才生效<pre class="line-numbers language-none"><code class="language-none">div &#123;
+    position:sticky;
+    top:10px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-6边偏移"><a href="#7-3-6边偏移" class="headerlink" title="7.3.6边偏移"></a>7.3.6边偏移</h4><img src="/2021/11/16/cong-0-kai-shi-css/css-09.png" class="">
+
+<h4 id="7-3-7子绝夫相是什么"><a href="#7-3-7子绝夫相是什么" class="headerlink" title="7.3.7子绝夫相是什么"></a>7.3.7子绝夫相是什么</h4><p>子绝夫相的意思就是<strong>子级是绝对定位的话，父级要用相对定位</strong></p>
+<ul>
+<li>子盒子绝对定位不占位置，可以放到父盒子的任意地方，不会影响兄弟盒子</li>
+<li>父盒子需要添加定位，限制子盒子在父盒子内显示</li>
+<li>父盒子布局的时候需要占有位置，因此是相对定位</li>
+<li>子绝父绝也会出现，但是父元素的父元素一定是相对定位<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 采用less语法 --&gt;
+.father &#123;
+    position:relative;
+    .son &#123;
+        position:absolute;
+        top:10px;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="7-3-8定位叠放次序-z-index"><a href="#7-3-8定位叠放次序-z-index" class="headerlink" title="7.3.8定位叠放次序 z-index"></a>7.3.8定位叠放次序 z-index</h4><p>使用定位布局的时候可能会出现盒子重叠的情况。此时可以使用z-index来控制盒子的前后次序</p>
+<ul>
+<li>数值可以是正整数、负整数或0，数值越大盒子越靠上</li>
+<li>属性值相同的话，后来居上，以后书写的为准</li>
+<li>数字后面不可以加单位</li>
+<li>只有定位的盒子才有z-index属性<pre class="line-numbers language-none"><code class="language-none">.father &#123;
+    position:relative;
+    .son1 &#123;
+        position:absolute;
+        top:0;
+        z-index:0;
+    &#125;
+    .son2 &#123;
+        position:absolute;
+        top:0;
+        z-index:1;
+    &#125;
+    &lt;!-- 子盒子2会在1上面 --&gt;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 
                 
             </div>
@@ -1056,7 +1135,7 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="156157272"
+                   id="2833462877"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -1087,7 +1166,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.7k</span>&nbsp;字
+                class="white-color">2.7k</span>&nbsp;字
             
             
             

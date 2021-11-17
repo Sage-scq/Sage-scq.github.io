@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -614,7 +614,51 @@ div &#123;
     &lt;!-- 子盒子2会在1上面 --&gt;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-
+<h3 id="7-4关于定位的其他"><a href="#7-4关于定位的其他" class="headerlink" title="7.4关于定位的其他"></a>7.4关于定位的其他</h3><ol>
+<li>绝对定位的盒子水平居中<br>加了绝对定位的盒子不能通过<code>margin:0 auto</code>进行水平居中，但是可以通过以下的计算方法实现水平居中<pre class="line-numbers language-none"><code class="language-none">.son &#123;
+    position:absolute;
+    &lt;!-- 盒子左侧移动到父元素水平中心 --&gt;
+    left:50%
+    &lt;!-- 盒子水平向左移动自身50%宽度 --&gt;
+    transform:transitionX(-50%)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>定位的特殊特性</li>
+</ol>
+<ul>
+<li>行内元素添加绝对或者固定定位，可以直接设置高度和宽度</li>
+<li>块级元素添加绝对或者固定定位，如果不给宽度或高度默认大小是内容的大小</li>
+</ul>
+<ol start="3">
+<li>脱标的盒子不会触发外边距塌陷</li>
+</ol>
+<ul>
+<li>浮动元素、绝对定位（固定定位）元素都不会出发外边距合并的问题</li>
+</ul>
+<blockquote>
+<p>关于外边距塌陷的解释：<br>1.当上下相邻的两个块级元素相遇，上面的元素有下边距margin-bottom，下面的元素有上边距margin-top，则它们之间的垂直距离取两个值中的较大者。<br>2.对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者。</p>
+</blockquote>
+<ol start="4">
+<li>绝对定位会完全压住盒子<br>与浮动不同，浮动类似于环绕，不会压住文字图片，但是绝对定位会完全压住。</li>
+</ol>
+<hr>
+<h2 id="8-元素的显示与隐藏"><a href="#8-元素的显示与隐藏" class="headerlink" title="8.元素的显示与隐藏"></a>8.元素的显示与隐藏</h2><h3 id="8-1display"><a href="#8-1display" class="headerlink" title="8.1display"></a>8.1display</h3><ul>
+<li><code>display：none</code>:隐藏对象</li>
+<li><code>display:block</code>:除了转换为块级元素外，同时还有显示元素的意思<br>注意，<strong>display隐藏元素后，元素不再占有原来的位置！</strong></li>
+</ul>
+<h3 id="8-2visibility"><a href="#8-2visibility" class="headerlink" title="8.2visibility"></a>8.2visibility</h3><ul>
+<li><code>visibility:visble</code>:元素可视</li>
+<li><code>visibility：hidden</code>:元素隐藏<br>注意，<strong>visibility隐藏元素后，元素会占有原来的位置！</strong></li>
+</ul>
+<h3 id="8-3overflow溢出"><a href="#8-3overflow溢出" class="headerlink" title="8.3overflow溢出"></a>8.3overflow溢出</h3><ul>
+<li><code>overflow:visible</code>:不剪切内容也不添加滚动条</li>
+<li><code>overflow:hidden</code>:不显示超过对象尺寸的内容，超出的部分被隐藏</li>
+<li><code>overflow:scroll</code>:不管超出内容与否，总是显示滚动条</li>
+<li><code>overflow:auto</code>:超出自动显示滚动条，不超出则不显示</li>
+</ul>
+<blockquote>
+<p>需要注意的是定位后需要谨慎使用overflow，它有可能会剪切你的元素的一部分</p>
+</blockquote>
+<h2 id="本文结束"><a href="#本文结束" class="headerlink" title="本文结束"></a>本文结束</h2>
                 
             </div>
             <hr/>
@@ -866,7 +910,7 @@ div &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本文是最基础的css应用，不牵扯css3的新增内容与部分高级css技巧。
                         
                     </div>
                     <div class="publish-info">
@@ -1166,7 +1210,7 @@ div &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.7k</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             

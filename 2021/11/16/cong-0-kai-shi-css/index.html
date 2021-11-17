@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    685
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -478,6 +478,63 @@
             background-color: blue;
         &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h3 id="6-2浮动元素搭配标准流父级元素"><a href="#6-2浮动元素搭配标准流父级元素" class="headerlink" title="6.2浮动元素搭配标准流父级元素"></a>6.2浮动元素搭配标准流父级元素</h3><ul>
+<li>为了约束元素的位置我们通常采用先用标准流的父元素排列上下位置，再在内部使用浮动进行左右位置的排列<img src="/2021/11/16/cong-0-kai-shi-css/css-07.png" class=""></li>
+</ul>
+<hr>
+<h3 id="6-3浮动布局的注意点"><a href="#6-3浮动布局的注意点" class="headerlink" title="6.3浮动布局的注意点"></a>6.3浮动布局的注意点</h3><ol>
+<li>先用标准流父元素上下排列，再在内部进行子元素浮动左右排列</li>
+<li>一个元素浮动了理论上其余兄弟元素也要浮动。所谓<strong>一浮全浮</strong>。</li>
+<li>浮动的盒子只影响后面的标准流盒子，不会影响之前的。</li>
+</ol>
+<hr>
+<h3 id="6-4清除浮动"><a href="#6-4清除浮动" class="headerlink" title="6.4清除浮动"></a>6.4清除浮动</h3><h4 id="6-4-1为什么要清除浮动"><a href="#6-4-1为什么要清除浮动" class="headerlink" title="6.4.1为什么要清除浮动"></a>6.4.1为什么要清除浮动</h4><p>由于父级盒子在很多情况下不方便设定高度，但是子盒子浮动不占有位置，导致父盒子会影响下面的标准流盒子。</p>
+<img src="/2021/11/16/cong-0-kai-shi-css/css-08.png" class="">
+
+<h4 id="6-4-2清除浮动的本质"><a href="#6-4-2清除浮动的本质" class="headerlink" title="6.4.2清除浮动的本质"></a>6.4.2清除浮动的本质</h4><ul>
+<li>清除浮动的本质是清除浮动元素造成的影响</li>
+<li>如果父盒子本身设定了高度，就不需要清除浮动</li>
+<li>清除浮动后，父级会根据浮动的子盒子自动监测高度，父级有了高度就不会影响下面的标准流盒子。</li>
+</ul>
+<h4 id="6-4-3清除浮动的方法"><a href="#6-4-3清除浮动的方法" class="headerlink" title="6.4.3清除浮动的方法"></a>6.4.3清除浮动的方法</h4><ol>
+<li><strong>额外标签法</strong><br>在浮动的元素末尾添加一个空标签。例如<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>,或者其他标签（如<code>&lt;br/&gt;</code>）</li>
+</ol>
+<ul>
+<li>优点：通俗易懂，书写方便</li>
+<li>缺点：添加了许多无意义表情，结构化差</li>
+</ul>
+<ol start="2">
+<li><strong>父级添加overflow</strong><br>可以给父级添加<code>overflow</code>属性，属性值可以为<code>hidden</code>、<code>auto</code>或<code>scroll</code></li>
+</ol>
+<ul>
+<li>优点：代码简介</li>
+<li>缺点：无法显示溢出的部分</li>
+</ul>
+<ol start="3">
+<li><p><strong>父级:after伪元素法</strong><br><code>:after</code>方法是额外标签法的升级版，是给父元素添加。该写法结构简单，写法高级。</p>
+<pre class="line-numbers language-none"><code class="language-none">.clearfix:after &#123;
+    content:&quot;&quot;;
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>父级双伪元素清除浮动</strong></p>
+</li>
+</ol>
+<ul>
+<li>推荐使用该写法<pre class="line-numbers language-none"><code class="language-none">.clearfix:before,.clearfix:after &#123;
+    content:&quot;&quot;;
+    display:table;
+&#125;
+.clearfix:after &#123;
+    clear:both
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p>注意IE6-7不支持after，会有兼容性问题（但是IE已经快消失了，所以问题不大）</p>
+</blockquote>
 
                 
             </div>
@@ -1001,7 +1058,7 @@
                    type="playlist"
                    id="156157272"
                    fixed='true'
-                   autoplay='true'
+                   autoplay='false'
                    theme='#42b983'
                    loop='all'
                    order='random'
@@ -1030,7 +1087,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.2k</span>&nbsp;字
+                class="white-color">1.7k</span>&nbsp;字
             
             
             

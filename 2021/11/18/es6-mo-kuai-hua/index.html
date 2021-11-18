@@ -429,6 +429,7 @@ export &#123;a,obj&#125;<span aria-hidden="true" class="line-numbers-rows"><span
 <blockquote>
 <p>其实整体暴露就是部分暴露的简化写法，不用再写那么多export罢了</p>
 </blockquote>
+<hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>无论是什么方式暴露，暴露出去的都是对象，只不过对象的形成方式不同。默认暴露是以default为键，后面的值为值的对象。部分暴露是把所有暴露的变量封装到一个对象中，整体暴露是我们自己封装了对象暴露出去。</li>
 <li>无论是什么方式暴露，想要直接拿到暴露出去的对象（而不是解构的一部分）那么写法是<pre class="line-numbers language-none"><code class="language-none">import * as obj from &#39;.&#x2F;xxx.js&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>

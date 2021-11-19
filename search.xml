@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2021/11/19/cong-0-kai-shi-html5/1/"/>
+      <url>/2021/11/19/cong-0-kai-shi-html5/1/</url>
+      
+        <content type="html"><![CDATA[<video src=""></video><input type="file" multiple="multiple">]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从0开始HTML5</title>
+      <link href="/2021/11/19/cong-0-kai-shi-html5/"/>
+      <url>/2021/11/19/cong-0-kai-shi-html5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="从0开始HTML5"><a href="#从0开始HTML5" class="headerlink" title="从0开始HTML5"></a>从0开始HTML5</h1><hr><h2 id="1-HTML5新特性"><a href="#1-HTML5新特性" class="headerlink" title="1. HTML5新特性"></a>1. HTML5新特性</h2><p>HTML5的新特性主要是针对以前的不足，增加了一些新的标签、表单与属性。<br>这些特性都有兼容性问题，IE9以下需要慎重使用。</p><hr><h2 id="2-新增语义化标签"><a href="#2-新增语义化标签" class="headerlink" title="2.新增语义化标签"></a>2.新增语义化标签</h2><ul><li><code>&lt;header&gt;</code>:头部标签</li><li><code>&lt;nav&gt;</code>:导航标签</li><li><code>&lt;article&gt;</code>:内容标签</li><li><code>&lt;section&gt;</code>:定义文档某个区域</li><li><code>&lt;aside&gt;</code>:侧边栏标签</li><li><code>&lt;footer&gt;</code>:尾部标签<img src="/2021/11/19/cong-0-kai-shi-html5/1.png" class="">注意：</li><li>这种语义化标准主要是针对搜索引擎的</li><li>这些新标签可以在页面中多次使用</li><li>移动端没有兼容性问题，可以放心大胆的用</li></ul><hr><h2 id="3-H5新增视频标签"><a href="#3-H5新增视频标签" class="headerlink" title="3. H5新增视频标签"></a>3. H5新增视频标签</h2><ul><li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;video src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;video&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>可选属性<img src="/2021/11/19/cong-0-kai-shi-html5/2.png" class=""></li></ul><hr><h2 id="4-H5新增音频标签"><a href="#4-H5新增音频标签" class="headerlink" title="4. H5新增音频标签"></a>4. H5新增音频标签</h2><ul><li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;audio src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;audio&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>可选属性<img src="/2021/11/19/cong-0-kai-shi-html5/3.png" class=""></li></ul><blockquote><p>需要注意的是，Chrome浏览器是禁止音视频自动播放的</p></blockquote><hr><h2 id="5-H5新增input"><a href="#5-H5新增input" class="headerlink" title="5. H5新增input"></a>5. H5新增input</h2><ul><li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 验证的时候必须添加form表单域 --&gt;&lt;form action&#x3D;&quot;&quot;&gt;    &lt;ul&gt;        &lt;li&gt;邮箱：&lt;input type&#x3D;&quot;email&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;网址：&lt;input type&#x3D;&quot;url&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;日期：&lt;input type&#x3D;&quot;date&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;日期：&lt;input type&#x3D;&quot;time&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;数量：&lt;input type&#x3D;&quot;number&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;手机号码：&lt;input type&#x3D;&quot;tel&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;搜索：&lt;input type&#x3D;&quot;search&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;li&gt;颜色：&lt;input type&#x3D;&quot;color&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;        &lt;!--点击提交按钮就可以进行表单验证 --&gt;        &lt;li&gt;&lt;input type&#x3D;&quot;submit&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;    &lt;&#x2F;ul&gt;&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>属性<img src="/2021/11/19/cong-0-kai-shi-html5/4.png" class=""></li></ul><blockquote><p>但是表单验证一般是自己写正则了，不一定用h5自带的这个</p></blockquote><hr><h2 id="6-H5新增表单属性"><a href="#6-H5新增表单属性" class="headerlink" title="6. H5新增表单属性"></a>6. H5新增表单属性</h2><ul><li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;input required&#x3D;&quot;required&quot;&gt;&lt;&#x2F;input&gt;&lt;input placeholder&#x3D;&quot;请输入内容&quot;&gt;&lt;&#x2F;input&gt;&lt;input autofocus&#x3D;&quot;autofocus&quot;&gt;&lt;&#x2F;input&gt;&lt;input autocomplete&#x3D;&quot;off&quot;&gt;&lt;&#x2F;input&gt;&lt;input type&#x3D;&quot;file&quot; multiple&#x3D;&quot;multiple&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>属性<img src="/2021/11/19/cong-0-kai-shi-html5/5.png" class=""></li></ul><hr><h2 id="7-html常用实体符号"><a href="#7-html常用实体符号" class="headerlink" title="7. html常用实体符号"></a>7. html常用实体符号</h2><img src="/2021/11/19/cong-0-kai-shi-html5/6.png" class="">]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5 </tag>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css常用居中</title>
       <link href="/2021/11/19/css-chang-yong-ju-zhong/"/>
       <url>/2021/11/19/css-chang-yong-ju-zhong/</url>

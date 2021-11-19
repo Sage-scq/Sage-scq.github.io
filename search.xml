@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>ES6解构赋值</title>
+      <link href="/2021/11/19/es6-jie-gou-fu-zhi/"/>
+      <url>/2021/11/19/es6-jie-gou-fu-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ES6解构赋值"><a href="#ES6解构赋值" class="headerlink" title="ES6解构赋值"></a>ES6解构赋值</h1><hr><h2 id="1-数组解构"><a href="#1-数组解构" class="headerlink" title="1.数组解构"></a>1.数组解构</h2><p>ES6中允许从数组中提取值，按照对应的位置对变量进行复制。</p><pre class="line-numbers language-none"><code class="language-none">let [ a, b, c ] &#x3D; [ 1, 2, 3 ]&#x2F;&#x2F; a &#x3D; 1, b &#x3D; 2, c &#x3D; 3 代替了 let a &#x3D; arr[0]&#x2F;&#x2F; 如果解构不成功，变量的值就是undefinedlet [ a, b, c ]&#x3D;[ 1, 2 ]&#x2F;&#x2F; c &#x3D; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>如果要避免拿到undefined，可以先给一个默认值如<code>let [ a, b, c = 10] = [ 1, 2 ]</code>，这样c的值依然是10而不是undefined</p></blockquote><hr><h2 id="2-对象解构"><a href="#2-对象解构" class="headerlink" title="2.对象解构"></a>2.对象解构</h2><p>对象解构允许我们使用变量的名字去匹配对象的<strong>属性</strong>，匹配成功则讲对象属性的值赋值给该变量</p><pre class="line-numbers language-none"><code class="language-none">let person &#x3D; &#123;    uname: &#39;zs&#39;,    age: 18&#125;let &#123; uname, age &#125; &#x3D; person;&#x2F;&#x2F; uname &#x3D; &#39;zs&#39;, age &#x3D; 18 变量名与属性名成功匹配let &#123; tname, tage &#125; &#x3D; person;&#x2F;&#x2F; tname与tage都是undefined 变量名与属性名未能成功匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>但是变量名也不一定必须与属性名匹配，我们可以进行修改。依然是上面的例子</li></ul><pre class="line-numbers language-none"><code class="language-none">let &#123; uname:myName, age:Myage &#125; &#x3D; person;&#x2F;&#x2F; myName &#x3D; &#39;zs&#39;, Myage &#x3D; 18 成功修改了变量名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><hr><h2 id="3-交换变量"><a href="#3-交换变量" class="headerlink" title="3. 交换变量"></a>3. 交换变量</h2><p>在解构赋值中可以直接进行变量的交换，不用再找一个中间变量了</p><pre class="line-numbers language-none"><code class="language-none">let a &#x3D; 1;let b &#x3D; 3;[ a, b] &#x3D; [ b, a ]&#x2F;&#x2F; a &#x3D; 3, b &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Es6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从0开始HTML5</title>
       <link href="/2021/11/19/cong-0-kai-shi-html5/"/>
       <url>/2021/11/19/cong-0-kai-shi-html5/</url>

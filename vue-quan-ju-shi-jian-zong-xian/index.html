@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从0开始HTML5, Sage的博客">
+    <meta name="keywords" content="VUE全局事件总线, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从0开始HTML5 | Sage的博客</title>
+    <title>VUE全局事件总线 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -181,12 +181,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从0开始HTML5</h1>
+                    <h1 class="description center-align post-title">VUE全局事件总线</h1>
                 </div>
             </div>
         </div>
@@ -302,12 +302,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML5/">
-                                <span class="chip bg-color">HTML5</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/VUE/">
+                                <span class="chip bg-color">VUE</span>
                             </a>
                         
                     </div>
@@ -318,8 +318,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                前端学习
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                前端知识
                             </a>
                         
                     </div>
@@ -331,28 +331,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-11-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-11-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    610
+                    432
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -370,75 +370,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从0开始HTML5"><a href="#从0开始HTML5" class="headerlink" title="从0开始HTML5"></a>从0开始HTML5</h1><hr>
-<h2 id="1-HTML5新特性"><a href="#1-HTML5新特性" class="headerlink" title="1. HTML5新特性"></a>1. HTML5新特性</h2><p>HTML5的新特性主要是针对以前的不足，增加了一些新的标签、表单与属性。<br>这些特性都有兼容性问题，IE9以下需要慎重使用。</p>
+                <h1 id="VUE全局事件总线"><a href="#VUE全局事件总线" class="headerlink" title="VUE全局事件总线"></a>VUE全局事件总线</h1><hr>
+<h2 id="1-什么是全局事件总线"><a href="#1-什么是全局事件总线" class="headerlink" title="1. 什么是全局事件总线"></a>1. 什么是全局事件总线</h2><p>全局事件总线是一种<strong>组件间通信</strong>的方法。使用全局事件总线就可以不拘泥于父子组件或兄弟组件，任意的组件之间都可以进行通信。<br>那么如何达到在任意组件之间进行通信呢？我们就需要一个所有组件都能看得到的“人”，这个人当然就是VUE的原型对象。我们给它身上挂了东西，在我们创建了VC（VUE component）对象后，使用该东西的时候，组件顺着原型链查找，在这个组件中也可以用到这个东西。</p>
 <hr>
-<h2 id="2-新增语义化标签"><a href="#2-新增语义化标签" class="headerlink" title="2.新增语义化标签"></a>2.新增语义化标签</h2><ul>
-<li><code>&lt;header&gt;</code>:头部标签</li>
-<li><code>&lt;nav&gt;</code>:导航标签</li>
-<li><code>&lt;article&gt;</code>:内容标签</li>
-<li><code>&lt;section&gt;</code>:定义文档某个区域</li>
-<li><code>&lt;aside&gt;</code>:侧边栏标签</li>
-<li><code>&lt;footer&gt;</code>:尾部标签<img src="/2021/11/19/cong-0-kai-shi-html5/1.png" class="">
-注意：</li>
-<li>这种语义化标准主要是针对搜索引擎的</li>
-<li>这些新标签可以在页面中多次使用</li>
-<li>移动端没有兼容性问题，可以放心大胆的用</li>
-</ul>
+<h2 id="2-安装全局事件总线"><a href="#2-安装全局事件总线" class="headerlink" title="2. 安装全局事件总线"></a>2. 安装全局事件总线</h2><p>由于是在VUE模型的原型对象上挂载，在<code>main.js</code>中就是如下写法</p>
+<pre class="line-numbers language-none"><code class="language-none">new Vue(&#123;
+    .......
+    beforeCreate()&#123;
+        Vue.prototype.$bus &#x3D; this;
+    &#125;,
+    .......
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
-<h2 id="3-H5新增视频标签"><a href="#3-H5新增视频标签" class="headerlink" title="3. H5新增视频标签"></a>3. H5新增视频标签</h2><ul>
-<li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;video src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;video&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>可选属性<img src="/2021/11/19/cong-0-kai-shi-html5/2.png" class=""></li>
-</ul>
+<h2 id="3-使用全局事件总线"><a href="#3-使用全局事件总线" class="headerlink" title="3. 使用全局事件总线"></a>3. 使用全局事件总线</h2><ol>
+<li>接收数据<br>A组件想要接收数据，那么就在A组件中给$bus绑定事件，<strong>事件的回调留在A组件中</strong><pre class="line-numbers language-none"><code class="language-none">methods: &#123;
+    ...
+    callback(data)&#123;
+        .....
+    &#125;
+    ...
+&#125;,
+mounted()&#123;
+    this.$bus.$on(&#39;callback&#39;)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>传递数据<br>B组件需要传输数据给A组件，那么B组件中需要在合适的地方去触发这个事件<pre class="line-numbers language-none"><code class="language-none">this.$bus.$emit(&#39;callback&#39;,data)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+然后data就会被传递给A组件，同时A组间中的callback会被调用</li>
+</ol>
 <hr>
-<h2 id="4-H5新增音频标签"><a href="#4-H5新增音频标签" class="headerlink" title="4. H5新增音频标签"></a>4. H5新增音频标签</h2><ul>
-<li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;audio src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;audio&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>可选属性<img src="/2021/11/19/cong-0-kai-shi-html5/3.png" class=""></li>
-</ul>
-<blockquote>
-<p>需要注意的是，Chrome浏览器是禁止音视频自动播放的</p>
-</blockquote>
-<hr>
-<h2 id="5-H5新增input"><a href="#5-H5新增input" class="headerlink" title="5. H5新增input"></a>5. H5新增input</h2><ul>
-<li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 验证的时候必须添加form表单域 --&gt;
-&lt;form action&#x3D;&quot;&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;邮箱：&lt;input type&#x3D;&quot;email&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;网址：&lt;input type&#x3D;&quot;url&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;日期：&lt;input type&#x3D;&quot;date&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;日期：&lt;input type&#x3D;&quot;time&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;数量：&lt;input type&#x3D;&quot;number&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;手机号码：&lt;input type&#x3D;&quot;tel&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;搜索：&lt;input type&#x3D;&quot;search&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;li&gt;颜色：&lt;input type&#x3D;&quot;color&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-        &lt;!--点击提交按钮就可以进行表单验证 --&gt;
-        &lt;li&gt;&lt;input type&#x3D;&quot;submit&quot;&gt;&lt;&#x2F;input&gt;&lt;&#x2F;li&gt;
-    &lt;&#x2F;ul&gt;
-&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>属性<img src="/2021/11/19/cong-0-kai-shi-html5/4.png" class=""></li>
-</ul>
-<blockquote>
-<p>但是表单验证一般是自己写正则了，不一定用h5自带的这个</p>
-</blockquote>
-<hr>
-<h2 id="6-H5新增表单属性"><a href="#6-H5新增表单属性" class="headerlink" title="6. H5新增表单属性"></a>6. H5新增表单属性</h2><ul>
-<li>语法<pre class="line-numbers language-none"><code class="language-none">&lt;input required&#x3D;&quot;required&quot;&gt;&lt;&#x2F;input&gt;
-&lt;input placeholder&#x3D;&quot;请输入内容&quot;&gt;&lt;&#x2F;input&gt;
-&lt;input autofocus&#x3D;&quot;autofocus&quot;&gt;&lt;&#x2F;input&gt;
-&lt;input autocomplete&#x3D;&quot;off&quot;&gt;&lt;&#x2F;input&gt;
-&lt;input type&#x3D;&quot;file&quot; multiple&#x3D;&quot;multiple&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>属性<img src="/2021/11/19/cong-0-kai-shi-html5/5.png" class=""></li>
-</ul>
-<hr>
-<h2 id="7-html常用实体符号"><a href="#7-html常用实体符号" class="headerlink" title="7. html常用实体符号"></a>7. html常用实体符号</h2><img src="/2021/11/19/cong-0-kai-shi-html5/6.png" class="">
-
-
-
-
-
-
-
-
+<h2 id="3-解绑事件"><a href="#3-解绑事件" class="headerlink" title="3. 解绑事件"></a>3. 解绑事件</h2><p>我们最好在<code>beforeDestroy</code>钩子中去解绑当前组件用到的事件。如下例</p>
+<pre class="line-numbers language-none"><code class="language-none">methods: &#123;
+    ...
+    callback(data)&#123;
+        .....
+    &#125;
+    ...
+&#125;,
+mounted()&#123;
+    this.$bus.$on(&#39;callback&#39;)
+&#125;,
+beforeDestroy()&#123;
+    this.$bus.$off(&#39;callback&#39;)
+    &#x2F;&#x2F; 或者直接使用this.$bus.$off()不加任何参数来移除该组件的所有绑定事件
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -464,7 +438,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/cong-0-kai-shi-html5/">https://sage-scq.github.io/cong-0-kai-shi-html5/</a>
+                    <a href="https://sage-scq.github.io/vue-quan-ju-shi-jian-zong-xian/">https://sage-scq.github.io/vue-quan-ju-shi-jian-zong-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -502,12 +476,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML5/">
-                                    <span class="chip bg-color">HTML5</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/VUE/">
+                                    <span class="chip bg-color">VUE</span>
                                 </a>
                             
                         </div>
@@ -677,9 +651,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/vue-quan-ju-shi-jian-zong-xian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="VUE全局事件总线">
+                        
+                        <span class="card-title">VUE全局事件总线</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            VUE中全局事件总线的注册与使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/VUE/">
+                        <span class="chip bg-color">VUE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/es6-jie-gou-fu-zhi/">
                     <div class="card-image">
@@ -694,59 +723,6 @@
                     <div class="summary block-with-text">
                         
                             ES6解构赋值的相关知识
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    前端知识
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/Es6/">
-                        <span class="chip bg-color">Es6</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/css-chang-yong-ju-zhong/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="css常用居中">
-                        
-                        <span class="card-title">css常用居中</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            常用的css对齐方式
                         
                     </div>
                     <div class="publish-info">
@@ -768,8 +744,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Es6/">
+                        <span class="chip bg-color">Es6</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ES6解构赋值, Sage的博客">
+    <meta name="keywords" content="css常用居中, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ES6解构赋值 | Sage的博客</title>
+    <title>css常用居中 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -181,12 +181,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ES6解构赋值</h1>
+                    <h1 class="description center-align post-title">css常用居中</h1>
                 </div>
             </div>
         </div>
@@ -302,12 +302,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
-                            </a>
-                        
-                            <a href="/tags/Es6/">
-                                <span class="chip bg-color">Es6</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
                             </a>
                         
                     </div>
@@ -345,7 +341,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    351
+                    435
                 </div>
                 
 
@@ -370,42 +366,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ES6解构赋值"><a href="#ES6解构赋值" class="headerlink" title="ES6解构赋值"></a>ES6解构赋值</h1><hr>
-<h2 id="1-数组解构"><a href="#1-数组解构" class="headerlink" title="1.数组解构"></a>1.数组解构</h2><p>ES6中允许从数组中提取值，按照对应的位置对变量进行复制。</p>
-<pre class="line-numbers language-none"><code class="language-none">let [ a, b, c ] &#x3D; [ 1, 2, 3 ]
-&#x2F;&#x2F; a &#x3D; 1, b &#x3D; 2, c &#x3D; 3 代替了 let a &#x3D; arr[0]
-&#x2F;&#x2F; 如果解构不成功，变量的值就是undefined
-let [ a, b, c ]&#x3D;[ 1, 2 ]
-&#x2F;&#x2F; c &#x3D; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>如果要避免拿到undefined，可以先给一个默认值如<code>let [ a, b, c = 10] = [ 1, 2 ]</code>，这样c的值依然是10而不是undefined</p>
-</blockquote>
+                <h1 id="css常用居中"><a href="#css常用居中" class="headerlink" title="css常用居中"></a>css常用居中</h1><p>css中，对齐是经常要用到的，不论是水平还是垂直。</p>
 <hr>
-<h2 id="2-对象解构"><a href="#2-对象解构" class="headerlink" title="2.对象解构"></a>2.对象解构</h2><p>对象解构允许我们使用变量的名字去匹配对象的<strong>属性</strong>，匹配成功则讲对象属性的值赋值给该变量</p>
-<pre class="line-numbers language-none"><code class="language-none">let person &#x3D; &#123;
-    uname: &#39;zs&#39;,
-    age: 18
-&#125;
-let &#123; uname, age &#125; &#x3D; person;
-&#x2F;&#x2F; uname &#x3D; &#39;zs&#39;, age &#x3D; 18 变量名与属性名成功匹配
-let &#123; tname, tage &#125; &#x3D; person;
-&#x2F;&#x2F; tname与tage都是undefined 变量名与属性名未能成功匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>但是变量名也不一定必须与属性名匹配，我们可以进行修改。依然是上面的例子</li>
+<h2 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1.水平居中"></a>1.水平居中</h2><h3 id="1-1-元素水平居中"><a href="#1-1-元素水平居中" class="headerlink" title="1.1 元素水平居中"></a>1.1 元素水平居中</h3><ul>
+<li>标准流块元素水平居中，一般使用<code>margin:auto;</code>。同时要设置元素的宽度，剩余的空间会在元素的两个外边距之间平均分配</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">let &#123; uname:myName, age:Myage &#125; &#x3D; person;
-&#x2F;&#x2F; myName &#x3D; &#39;zs&#39;, Myage &#x3D; 18 成功修改了变量名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<blockquote>
+<p>注意如果未设置宽度或宽度为100%，对齐会无效</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">.center &#123;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 20px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>非标准流需要使用position与transform配合进行居中</li>
+</ul>
+<h3 id="1-2-文字水平居中"><a href="#1-2-文字水平居中" class="headerlink" title="1.2 文字水平居中"></a>1.2 文字水平居中</h3><ul>
+<li>文字水平居中的方式非常简单，即为<code>text-align:center;</code><pre class="line-numbers language-none"><code class="language-none">.center &#123;
+  text-align: center;
+  border: 3px solid green;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/2021/11/19/css-chang-yong-ju-zhong/01.png" class=""></li>
+</ul>
+<h3 id="1-3-图像水平居中"><a href="#1-3-图像水平居中" class="headerlink" title="1.3 图像水平居中"></a>1.3 图像水平居中</h3><ul>
+<li>图片要实现水平居中首先要将图片转换为<strong>块元素</strong>，再设置<code>margin:auto</code>即可<pre class="line-numbers language-none"><code class="language-none">img &#123;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 <hr>
-<h2 id="3-交换变量"><a href="#3-交换变量" class="headerlink" title="3. 交换变量"></a>3. 交换变量</h2><p>在解构赋值中可以直接进行变量的交换，不用再找一个中间变量了</p>
-<pre class="line-numbers language-none"><code class="language-none">let a &#x3D; 1;
-let b &#x3D; 3;
-[ a, b] &#x3D; [ b, a ]
-&#x2F;&#x2F; a &#x3D; 3, b &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-垂直居中"><a href="#2-垂直居中" class="headerlink" title="2. 垂直居中"></a>2. 垂直居中</h2><h3 id="2-1-元素垂直居中"><a href="#2-1-元素垂直居中" class="headerlink" title="2.1 元素垂直居中"></a>2.1 元素垂直居中</h3><ul>
+<li>可以给父元素使用<code>padding</code>进行居中（我很少用）<pre class="line-numbers language-none"><code class="language-none">.center &#123;
+  padding: 70px 0;
+  border: 3px solid green;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>通常可以用<code>position</code>配合<code>transform</code>来进行垂直居中<pre class="line-numbers language-none"><code class="language-none">.father &#123; 
+  height: 200px;
+  position: relative;
+  border: 3px solid green; 
+&#125;
 
-
-
+.son  &#123;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用flex布局实现垂直居中<pre class="line-numbers language-none"><code class="language-none">center &#123;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green; 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="2-2-文字垂直居中"><a href="#2-2-文字垂直居中" class="headerlink" title="2.2 文字垂直居中"></a>2.2 文字垂直居中</h3><ul>
+<li>一般文字垂直居中很简单，只需要让文字的行高等于盒子高度即可。<pre class="line-numbers language-none"><code class="language-none">.box &#123;
+  height:200px;
+  line-height:200px;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<hr>
+<h2 id="3-图片和文字一行时垂直居中"><a href="#3-图片和文字一行时垂直居中" class="headerlink" title="3. 图片和文字一行时垂直居中"></a>3. 图片和文字一行时垂直居中</h2><ul>
+<li>可以给图片加上<code>vertical-align：middle</code>配合<code>line-height</code>一起使用<pre class="line-numbers language-none"><code class="language-none">div &#123;
+  height: 200px;
+  background-color: dodgerblue;
+  line-height: 200px;
+&#125;
+img &#123;
+  width: 600px;
+  vertical-align: middle;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>也可以给父元素<code>display:flex</code>两行代码解决问题<pre class="line-numbers language-none"><code class="language-none">.father &#123;
+  display:flex;
+  align-items:center;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 
                 
             </div>
@@ -432,7 +471,7 @@ let b &#x3D; 3;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/2021/11/19/es6-jie-gou-fu-zhi/">https://sage-scq.github.io/2021/11/19/es6-jie-gou-fu-zhi/</a>
+                    <a href="https://sage-scq.github.io/css-chang-yong-ju-zhong/">https://sage-scq.github.io/css-chang-yong-ju-zhong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -470,12 +509,8 @@ let b &#x3D; 3;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
-                                </a>
-                            
-                                <a href="/tags/Es6/">
-                                    <span class="chip bg-color">Es6</span>
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">css</span>
                                 </a>
                             
                         </div>
@@ -645,66 +680,11 @@ let b &#x3D; 3;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2021/11/19/es6-jie-gou-fu-zhi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="ES6解构赋值">
-                        
-                        <span class="card-title">ES6解构赋值</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            ES6解构赋值的相关知识
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    前端知识
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/Es6/">
-                        <span class="chip bg-color">Es6</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/19/cong-0-kai-shi-html5/">
+                <a href="/cong-0-kai-shi-html5/">
                     <div class="card-image">
                         
                         
@@ -720,9 +700,9 @@ let b &#x3D; 3;
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -744,6 +724,59 @@ let b &#x3D; 3;
                     
                     <a href="/tags/HTML/">
                         <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/es6-mo-kuai-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ES6模块化">
+                        
+                        <span class="card-title">ES6模块化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简述ES6模块化
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Es6/">
+                        <span class="chip bg-color">Es6</span>
                     </a>
                     
                 </div>

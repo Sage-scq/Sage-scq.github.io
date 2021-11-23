@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>函数防抖与节流</title>
+      <link href="/han-shu-fang-dou-yu-jie-liu/"/>
+      <url>/han-shu-fang-dou-yu-jie-liu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="函数防抖与节流"><a href="#函数防抖与节流" class="headerlink" title="函数防抖与节流"></a>函数防抖与节流</h1><hr><h2 id="1-函数防抖"><a href="#1-函数防抖" class="headerlink" title="1. 函数防抖"></a>1. 函数防抖</h2><p>有的时候我们会遇到短时间内大量触发某个事件的情况，比如监听用户的输入内容发送ajax请求，如果不进行防抖处理，就会在短时间内触发大量事件发送大量的请求。<br>函数防抖就是当持续触发事件时，一段时间内<strong>只能触发一次</strong>。将几次操作合并为一次操作进行。<br>比如下面监听<code>input</code>框的例子</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 不做防抖处理，伴随输入发送了大量的请求let telInput &#x3D; document.querySelector(&#39;input&#39;);telInput.addEventListener(&#39;input&#39;, function(e) &#123;        $.ajax(&#123;...&#125;) &#x2F;&#x2F; 发送请求&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>做防抖处理后，用户停止输入两秒后才会发送一次请求。注意<strong>需要在开启定时器之前清空之前的定时器</strong>。</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 防抖处理后let input &#x3D; document.querySelector(&#39;input&#39;)let timer &#x3D; null;input.addEventListener(&#39;input&#39;, function (e) &#123;    clearTimeout(timer)    timer &#x3D; setTieout(() &#x3D;&gt; &#123;         console.log(this.value);    &#125;, 2000);&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>上述代码引入了全局变量，不是特别好，可以进行优化，利用自运行函数来避免污染</p><pre class="line-numbers language-none"><code class="language-none">let input &#x3D; document.querySelector(&#39;input&#39;)input.addEventListener(&#39;input&#39;, function (e) &#123;    let timer &#x3D; null;    return function () &#123;        clearTimeout(timer)        timer &#x3D; setTimeout(() &#x3D;&gt; &#123;            console.log(this.value);        &#125;, 2000);    &#125;&#125;())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="2-函数节流"><a href="#2-函数节流" class="headerlink" title="2. 函数节流"></a>2. 函数节流</h2><p>函数节流就是一段时间内保证只触发一次事件.<br>比如上面的例子我们让控制台每1s打印一次输入框中的内容(利用时间戳)</p><pre class="line-numbers language-none"><code class="language-none">let input &#x3D; document.querySelector(&#39;input&#39;)input.addEventListener(&#39;input&#39;, function (e) &#123;    let lasttime &#x3D; 0;    return function () &#123;        let now &#x3D; new Date().getTime();        if (now - lasttime &gt; 1000) &#123; &#x2F;&#x2F; 若时间间隔大于1s            console.log(this.value);            lasttime &#x3D; now; &#x2F;&#x2F; 执行代码，重新计时        &#125;    &#125;&#125;())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>一句话概括：节流是把一定时间内的多个事件合为一个，防抖是固定的时间内事件只允许发生一次</p></blockquote><h2 id="3-使用lodash处理节流防抖（推荐）"><a href="#3-使用lodash处理节流防抖（推荐）" class="headerlink" title="3. 使用lodash处理节流防抖（推荐）"></a>3. 使用lodash处理节流防抖（推荐）</h2><ol><li>安装lodash<pre class="line-numbers language-none"><code class="language-none">sudo npm i --save lodash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>引入lodash<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 例如引入节流函数import throttle from &#39;lodash&#x2F;throttle&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li>使用lodash处理节流<img src="/han-shu-fang-dou-yu-jie-liu/1.png" class=""></li><li>使用lodash处理防抖<img src="/han-shu-fang-dou-yu-jie-liu/2.png" class=""></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue路由的两种模式</title>
       <link href="/vue-lu-you-de-liang-chong-mo-shi/"/>
       <url>/vue-lu-you-de-liang-chong-mo-shi/</url>

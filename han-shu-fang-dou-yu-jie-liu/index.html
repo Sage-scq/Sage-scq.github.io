@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ES6解构赋值, Sage的博客">
+    <meta name="keywords" content="函数防抖与节流, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ES6解构赋值 | Sage的博客</title>
+    <title>函数防抖与节流 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ES6解构赋值</h1>
+                    <h1 class="description center-align post-title">函数防抖与节流</h1>
                 </div>
             </div>
         </div>
@@ -328,10 +328,6 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/Es6/">
-                                <span class="chip bg-color">Es6</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -353,28 +349,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-11-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-11-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    351
+                    551
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -392,42 +388,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ES6解构赋值"><a href="#ES6解构赋值" class="headerlink" title="ES6解构赋值"></a>ES6解构赋值</h1><hr>
-<h2 id="1-数组解构"><a href="#1-数组解构" class="headerlink" title="1.数组解构"></a>1.数组解构</h2><p>ES6中允许从数组中提取值，按照对应的位置对变量进行复制。</p>
-<pre class="line-numbers language-none"><code class="language-none">let [ a, b, c ] &#x3D; [ 1, 2, 3 ]
-&#x2F;&#x2F; a &#x3D; 1, b &#x3D; 2, c &#x3D; 3 代替了 let a &#x3D; arr[0]
-&#x2F;&#x2F; 如果解构不成功，变量的值就是undefined
-let [ a, b, c ]&#x3D;[ 1, 2 ]
-&#x2F;&#x2F; c &#x3D; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="函数防抖与节流"><a href="#函数防抖与节流" class="headerlink" title="函数防抖与节流"></a>函数防抖与节流</h1><hr>
+<h2 id="1-函数防抖"><a href="#1-函数防抖" class="headerlink" title="1. 函数防抖"></a>1. 函数防抖</h2><p>有的时候我们会遇到短时间内大量触发某个事件的情况，比如监听用户的输入内容发送ajax请求，如果不进行防抖处理，就会在短时间内触发大量事件发送大量的请求。<br>函数防抖就是当持续触发事件时，一段时间内<strong>只能触发一次</strong>。将几次操作合并为一次操作进行。<br>比如下面监听<code>input</code>框的例子</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 不做防抖处理，伴随输入发送了大量的请求
+let telInput &#x3D; document.querySelector(&#39;input&#39;);
+telInput.addEventListener(&#39;input&#39;, function(e) &#123;
+        $.ajax(&#123;...&#125;) &#x2F;&#x2F; 发送请求
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>做防抖处理后，用户停止输入两秒后才会发送一次请求。注意<strong>需要在开启定时器之前清空之前的定时器</strong>。</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 防抖处理后
+let input &#x3D; document.querySelector(&#39;input&#39;)
+let timer &#x3D; null;
+input.addEventListener(&#39;input&#39;, function (e) &#123;
+    clearTimeout(timer)
+    timer &#x3D; setTieout(() &#x3D;&gt; &#123;
+         console.log(this.value);
+    &#125;, 2000);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上述代码引入了全局变量，不是特别好，可以进行优化，利用自运行函数来避免污染</p>
+<pre class="line-numbers language-none"><code class="language-none">let input &#x3D; document.querySelector(&#39;input&#39;)
+input.addEventListener(&#39;input&#39;, function (e) &#123;
+    let timer &#x3D; null;
+    return function () &#123;
+        clearTimeout(timer)
+        timer &#x3D; setTimeout(() &#x3D;&gt; &#123;
+            console.log(this.value);
+        &#125;, 2000);
+    &#125;
+&#125;())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="2-函数节流"><a href="#2-函数节流" class="headerlink" title="2. 函数节流"></a>2. 函数节流</h2><p>函数节流就是一段时间内保证只触发一次事件.<br>比如上面的例子我们让控制台每1s打印一次输入框中的内容(利用时间戳)</p>
+<pre class="line-numbers language-none"><code class="language-none">let input &#x3D; document.querySelector(&#39;input&#39;)
+input.addEventListener(&#39;input&#39;, function (e) &#123;
+    let lasttime &#x3D; 0;
+    return function () &#123;
+        let now &#x3D; new Date().getTime();
+        if (now - lasttime &gt; 1000) &#123; &#x2F;&#x2F; 若时间间隔大于1s
+            console.log(this.value);
+            lasttime &#x3D; now; &#x2F;&#x2F; 执行代码，重新计时
+        &#125;
+
+    &#125;
+&#125;())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>如果要避免拿到undefined，可以先给一个默认值如<code>let [ a, b, c = 10] = [ 1, 2 ]</code>，这样c的值依然是10而不是undefined</p>
+<p>一句话概括：节流是把一定时间内的多个事件合为一个，防抖是固定的时间内事件只允许发生一次</p>
 </blockquote>
-<hr>
-<h2 id="2-对象解构"><a href="#2-对象解构" class="headerlink" title="2.对象解构"></a>2.对象解构</h2><p>对象解构允许我们使用变量的名字去匹配对象的<strong>属性</strong>，匹配成功则讲对象属性的值赋值给该变量</p>
-<pre class="line-numbers language-none"><code class="language-none">let person &#x3D; &#123;
-    uname: &#39;zs&#39;,
-    age: 18
-&#125;
-let &#123; uname, age &#125; &#x3D; person;
-&#x2F;&#x2F; uname &#x3D; &#39;zs&#39;, age &#x3D; 18 变量名与属性名成功匹配
-let &#123; tname, tage &#125; &#x3D; person;
-&#x2F;&#x2F; tname与tage都是undefined 变量名与属性名未能成功匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>但是变量名也不一定必须与属性名匹配，我们可以进行修改。依然是上面的例子</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">let &#123; uname:myName, age:Myage &#125; &#x3D; person;
-&#x2F;&#x2F; myName &#x3D; &#39;zs&#39;, Myage &#x3D; 18 成功修改了变量名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<hr>
-<h2 id="3-交换变量"><a href="#3-交换变量" class="headerlink" title="3. 交换变量"></a>3. 交换变量</h2><p>在解构赋值中可以直接进行变量的交换，不用再找一个中间变量了</p>
-<pre class="line-numbers language-none"><code class="language-none">let a &#x3D; 1;
-let b &#x3D; 3;
-[ a, b] &#x3D; [ b, a ]
-&#x2F;&#x2F; a &#x3D; 3, b &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
+<h2 id="3-使用lodash处理节流防抖（推荐）"><a href="#3-使用lodash处理节流防抖（推荐）" class="headerlink" title="3. 使用lodash处理节流防抖（推荐）"></a>3. 使用lodash处理节流防抖（推荐）</h2><ol>
+<li>安装lodash<pre class="line-numbers language-none"><code class="language-none">sudo npm i --save lodash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>引入lodash<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 例如引入节流函数
+import throttle from &#39;lodash&#x2F;throttle&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>使用lodash处理节流<img src="/han-shu-fang-dou-yu-jie-liu/1.png" class=""></li>
+<li>使用lodash处理防抖<img src="/han-shu-fang-dou-yu-jie-liu/2.png" class=""></li>
+</ol>
 
                 
             </div>
@@ -454,7 +468,7 @@ let b &#x3D; 3;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/es6-jie-gou-fu-zhi/">https://sage-scq.github.io/es6-jie-gou-fu-zhi/</a>
+                    <a href="https://sage-scq.github.io/han-shu-fang-dou-yu-jie-liu/">https://sage-scq.github.io/han-shu-fang-dou-yu-jie-liu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -494,10 +508,6 @@ let b &#x3D; 3;
                             
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
-                                </a>
-                            
-                                <a href="/tags/Es6/">
-                                    <span class="chip bg-color">Es6</span>
                                 </a>
                             
                         </div>
@@ -667,29 +677,80 @@ let b &#x3D; 3;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/vue-quan-ju-shi-jian-zong-xian/">
+                <a href="/han-shu-fang-dou-yu-jie-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="VUE全局事件总线">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="函数防抖与节流">
                         
-                        <span class="card-title">VUE全局事件总线</span>
+                        <span class="card-title">函数防抖与节流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VUE中全局事件总线的注册与使用
+                            函数防抖与节流的概述以及lodash的运用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/vue-lu-you-de-liang-chong-mo-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Vue路由的两种模式">
+                        
+                        <span class="card-title">Vue路由的两种模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue注册路由时的hash模式与history模式区别
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -711,59 +772,6 @@ let b &#x3D; 3;
                     
                     <a href="/tags/VUE/">
                         <span class="chip bg-color">VUE</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/cong-0-kai-shi-html5/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="从0开始HTML5">
-                        
-                        <span class="card-title">从0开始HTML5</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            讲解HTML5新增的标签、特性等
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    前端学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
-                    </a>
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>

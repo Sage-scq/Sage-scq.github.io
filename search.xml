@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>面向对象与面向过程</title>
+      <link href="/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/"/>
+      <url>/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/</url>
+      
+        <content type="html"><![CDATA[<h1 id="面向对象与面向过程"><a href="#面向对象与面向过程" class="headerlink" title="面向对象与面向过程"></a>面向对象与面向过程</h1><hr><h2 id="1-面向过程"><a href="#1-面向过程" class="headerlink" title="1. 面向过程"></a>1. 面向过程</h2><p>面向过程就是分析出解决问题所需的步骤，然后用函数把这些过程一步一步实现，使用的时候再一个一个依次调用。比如我们都听过的笑话，把大象装进冰箱需要：1.打开冰箱门 2.把大象装进去 3.关上冰箱门<br>所以，<strong>面向过程，就是按照我们分析好的步骤按步骤解决问题</strong></p><hr><h2 id="2-面向对象（OOP）"><a href="#2-面向对象（OOP）" class="headerlink" title="2. 面向对象（OOP）"></a>2. 面向对象（OOP）</h2><p>面向对象编程就是把事物解构为一个个对象，对象再进行分工合作，比如刚才的笑话中的事物可以被对象化为</p><ul><li>大象对象：进冰箱</li><li>冰箱对象：打开、关闭</li></ul><p>然后对象之间分别使用各自的功能，就可以达到目的。<br>所以<strong>面向对象编程是以对象功能来划分问题，而不是步骤</strong></p><hr><h2 id="3-面向对象编程的特点"><a href="#3-面向对象编程的特点" class="headerlink" title="3. 面向对象编程的特点"></a>3. 面向对象编程的特点</h2><ol><li>封装性：不需要知道内部如何操作，开始使用即可</li><li>继承性：子类可以继承父类的属性与方法</li><li>同一个函数接口，实现多种不同的表现方式</li></ol><hr><h2 id="4-两种方式的对比"><a href="#4-两种方式的对比" class="headerlink" title="4.两种方式的对比"></a>4.两种方式的对比</h2><ul><li>面向过程优点：性能比面向对象高，适合与硬件联系紧密的东西如单片机<br>面向过程缺点：没有面向对象易维护、复用、扩展</li><li>面向对象优点：易维护、易复用、易扩展，可以设计出更灵活的系统。<br>面向对象缺点：性能比面向过程低</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES6中的promise</title>
       <link href="/es6-zhong-de-promise/"/>
       <url>/es6-zhong-de-promise/</url>

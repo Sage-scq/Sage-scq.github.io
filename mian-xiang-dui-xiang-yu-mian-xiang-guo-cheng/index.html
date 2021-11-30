@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue路由的两种模式, Sage的博客">
+    <meta name="keywords" content="面向对象与面向过程, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue路由的两种模式 | Sage的博客</title>
+    <title>面向对象与面向过程 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue路由的两种模式</h1>
+                    <h1 class="description center-align post-title">面向对象与面向过程</h1>
                 </div>
             </div>
         </div>
@@ -328,10 +328,6 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/VUE/">
-                                <span class="chip bg-color">VUE</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -353,21 +349,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2021-11-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2021-11-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    365
+                    400
                 </div>
                 
 
@@ -392,30 +388,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue路由的两种模式"><a href="#Vue路由的两种模式" class="headerlink" title="Vue路由的两种模式"></a>Vue路由的两种模式</h1><hr>
-<h2 id="1-hash模式"><a href="#1-hash模式" class="headerlink" title="1. hash模式"></a>1. hash模式</h2><h3 id="1-1-什么是hash值"><a href="#1-1-什么是hash值" class="headerlink" title="1.1. 什么是hash值"></a>1.1. 什么是hash值</h3><p>对于一个URL来说，<code>#</code>及其后面的值就是hash值</p>
-<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;pan.baidu.com&#x2F;disk&#x2F;home#list&#x2F;vmode&#x3D;list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>那么<code>#list/vmode=list</code>就是哈希值</p>
-<h3 id="1-2-hash值的特点"><a href="#1-2-hash值的特点" class="headerlink" title="1.2. hash值的特点"></a>1.2. hash值的特点</h3><p>hash值<strong>不会</strong>包含在http<strong>请求</strong>中，即：hash值不会带给服务器，即便是刷新</p>
-<h3 id="1-3-hash模式的特点"><a href="#1-3-hash模式的特点" class="headerlink" title="1.3 hash模式的特点"></a>1.3 hash模式的特点</h3><ol>
-<li>地址中一直带有#，不美观</li>
-<li>地址若通过第三方手机app分享，app校验严格的话地址会被标记为不合法</li>
-<li>兼容性较好</li>
+                <h1 id="面向对象与面向过程"><a href="#面向对象与面向过程" class="headerlink" title="面向对象与面向过程"></a>面向对象与面向过程</h1><hr>
+<h2 id="1-面向过程"><a href="#1-面向过程" class="headerlink" title="1. 面向过程"></a>1. 面向过程</h2><p>面向过程就是分析出解决问题所需的步骤，然后用函数把这些过程一步一步实现，使用的时候再一个一个依次调用。比如我们都听过的笑话，把大象装进冰箱需要：1.打开冰箱门 2.把大象装进去 3.关上冰箱门<br>所以，<strong>面向过程，就是按照我们分析好的步骤按步骤解决问题</strong></p>
+<hr>
+<h2 id="2-面向对象（OOP）"><a href="#2-面向对象（OOP）" class="headerlink" title="2. 面向对象（OOP）"></a>2. 面向对象（OOP）</h2><p>面向对象编程就是把事物解构为一个个对象，对象再进行分工合作，比如刚才的笑话中的事物可以被对象化为</p>
+<ul>
+<li>大象对象：进冰箱</li>
+<li>冰箱对象：打开、关闭</li>
+</ul>
+<p>然后对象之间分别使用各自的功能，就可以达到目的。<br>所以<strong>面向对象编程是以对象功能来划分问题，而不是步骤</strong></p>
+<hr>
+<h2 id="3-面向对象编程的特点"><a href="#3-面向对象编程的特点" class="headerlink" title="3. 面向对象编程的特点"></a>3. 面向对象编程的特点</h2><ol>
+<li>封装性：不需要知道内部如何操作，开始使用即可</li>
+<li>继承性：子类可以继承父类的属性与方法</li>
+<li>同一个函数接口，实现多种不同的表现方式</li>
 </ol>
 <hr>
-<h2 id="2-history模式"><a href="#2-history模式" class="headerlink" title="2. history模式"></a>2. history模式</h2><ul>
-<li>相较于hash模式只能改变#后的URL片段，history模式给了前端自由，整个URL都可以修改</li>
+<h2 id="4-两种方式的对比"><a href="#4-两种方式的对比" class="headerlink" title="4.两种方式的对比"></a>4.两种方式的对比</h2><ul>
+<li>面向过程优点：性能比面向对象高，适合与硬件联系紧密的东西如单片机<br>面向过程缺点：没有面向对象易维护、复用、扩展</li>
+<li>面向对象优点：易维护、易复用、易扩展，可以设计出更灵活的系统。<br>面向对象缺点：性能比面向过程低</li>
 </ul>
-<h3 id="2-1-history模式的特点"><a href="#2-1-history模式的特点" class="headerlink" title="2.1 history模式的特点"></a>2.1 history模式的特点</h3><ol>
-<li>地址干净美观</li>
-<li>兼容性相比hash模式较差</li>
-<li>应用部署上线需要后端支持以解决页面服务端404的问题。</li>
-</ol>
-<h3 id="2-2-解决history模式404问题"><a href="#2-2-解决history模式404问题" class="headerlink" title="2.2 解决history模式404问题"></a>2.2 解决history模式404问题</h3><p>history模式害怕的就是给服务器发送请求，比如刷新的时候是实实在在的请求服务器，刷新的时候如果服务器中没有URL对应的资源则会报错404.<br>对于niginx来说可以用以下方式解决</p>
-<pre class="line-numbers language-none"><code class="language-none">location &#x2F; &#123;
-  try_files $uri $uri&#x2F; &#x2F;index.html;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>对于 Node.js/Express，考虑使用 connect-history-api-fallback 中间件<br>(解决方式除了ngingx，其他暂不是特别熟悉如何使用，后面如果学到了会补充上来。)</p>
 
                 
             </div>
@@ -442,7 +434,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/vue-lu-you-de-liang-chong-mo-shi/">https://sage-scq.github.io/vue-lu-you-de-liang-chong-mo-shi/</a>
+                    <a href="https://sage-scq.github.io/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/">https://sage-scq.github.io/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -482,10 +474,6 @@
                             
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
-                                </a>
-                            
-                                <a href="/tags/VUE/">
-                                    <span class="chip bg-color">VUE</span>
                                 </a>
                             
                         </div>
@@ -655,29 +643,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/han-shu-fang-dou-yu-jie-liu/">
+                <a href="/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="函数防抖与节流">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="面向对象与面向过程">
                         
-                        <span class="card-title">函数防抖与节流</span>
+                        <span class="card-title">面向对象与面向过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            函数防抖与节流的概述以及lodash的运用
+                            面向对象与面向过程编程思想的不同
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -690,6 +679,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -708,24 +698,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/vue-quan-ju-shi-jian-zong-xian/">
+                <a href="/es6-zhong-de-promise/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="VUE全局事件总线">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ES6中的promise">
                         
-                        <span class="card-title">VUE全局事件总线</span>
+                        <span class="card-title">ES6中的promise</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VUE中全局事件总线的注册与使用
+                            promise的介绍及运用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-24
                             </span>
                         <span class="publish-author">
                             
@@ -746,8 +736,8 @@
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/VUE/">
-                        <span class="chip bg-color">VUE</span>
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
                     </a>
                     
                 </div>

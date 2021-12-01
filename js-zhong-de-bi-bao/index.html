@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ES6模块化, Sage的博客">
+    <meta name="keywords" content="JS中的闭包, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ES6模块化 | Sage的博客</title>
+    <title>JS中的闭包 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ES6模块化</h1>
+                    <h1 class="description center-align post-title">JS中的闭包</h1>
                 </div>
             </div>
         </div>
@@ -328,10 +328,6 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/Es6/">
-                                <span class="chip bg-color">Es6</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -353,28 +349,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-18
+                    2021-12-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-23
+                    2021-12-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    299
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -392,86 +388,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ES6模块化"><a href="#ES6模块化" class="headerlink" title="ES6模块化"></a>ES6模块化</h1><p>ES6新增了模块化，包含两个部分，export与import，让JavaScript支持了module。</p>
-<hr>
-<h2 id="1-默认暴露"><a href="#1-默认暴露" class="headerlink" title="1. 默认暴露"></a>1. 默认暴露</h2><p> 以暴露100为例，写法为</p>
-<pre class="line-numbers language-none"><code class="language-none">export defalut 100<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 暴露的其实是一个<strong>对象</strong>，以default为属性，default后面的为值<br> 引入时的写法即为</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; a &#x3D; 100
-import a form &#39;.&#x2F;xxx.js&#39; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>完整的写法如下，其实是一个对象的解构，由于default是关键字不能直接解构，而且书写复杂，所以简化了写法。</p>
-<pre class="line-numbers language-none"><code class="language-none">import &#123;default as a&#125; from &#39;.&#x2F;xxx.js&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>再比如如下写法</p>
-<pre class="line-numbers language-none"><code class="language-none">export default &#123;
-    a:100,
-    b:10
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>暴露出去的其实是</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;
-    default:&#123;
-        a:100,
-        b:10
+                <h1 id="JS-中的闭包"><a href="#JS-中的闭包" class="headerlink" title="JS 中的闭包"></a>JS 中的闭包</h1><hr>
+<h2 id="1-什么是闭包"><a href="#1-什么是闭包" class="headerlink" title="1. 什么是闭包"></a>1. 什么是闭包</h2><p>比如下面一段代码就产生了闭包，而闭包的本质，是内部函数中的一个<strong>对象</strong>，这个容器中包含引用的变量</p>
+<pre class="line-numbers language-none"><code class="language-none">function fn1( )&#123;
+    let a &#x3D; 2;
+    function fn2( )&#123;
+        a++;
+        console.log(a)
     &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>我们引入的时候如果写</p>
-<pre class="line-numbers language-none"><code class="language-none">import obj from &#39;.&#x2F;xxx.js&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>那么<code>obj.a=100</code>,<code>obj.b=10</code></p>
-<blockquote>
-<p>注意默认暴露只能写一次</p>
-</blockquote>
-<hr>
-<h2 id="2-部分暴露"><a href="#2-部分暴露" class="headerlink" title="2. 部分暴露"></a>2. 部分暴露</h2><p>部分暴露出去的同样是对象，例如如下</p>
-<pre class="line-numbers language-none"><code class="language-none">export let a &#x3D; 1;
-export let obj &#x3D; &#123;
-    a:10,
-    b:100
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>那么暴露出去的对象为如下</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;
-    a,
-    obj
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>所以引入的时候进行解构</p>
-<pre class="line-numbers language-none"><code class="language-none">import &#123;a, obj&#125; from &#39;.&#x2F;xxx.js&#39;
-&#x2F;&#x2F; a &#x3D; 1
-&#x2F;&#x2F; obj &#x3D; &#123;
-    a:10,
-    b:100
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<hr>
-<h2 id="3-整体暴露"><a href="#3-整体暴露" class="headerlink" title="3. 整体暴露"></a>3. 整体暴露</h2><p>整体暴露出去的同样是对象，如下例</p>
-<pre class="line-numbers language-none"><code class="language-none">let a &#x3D; 1;
-let obj &#x3D; &#123;
-    a:10,
-    b:100
+    return fn2
 &#125;
-export &#123;a,obj&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>export后面是什么，整体暴露出去的就是什么<br>引入方式和部分暴露一样</p>
-<blockquote>
-<p>其实整体暴露就是部分暴露的简化写法，不用再写那么多export罢了</p>
-</blockquote>
-<hr>
-<h2 id="4-引入并暴露"><a href="#4-引入并暴露" class="headerlink" title="4. 引入并暴露"></a>4. 引入并暴露</h2><p>我们可以通过例如<code>export &#123; ... as ... &#125; from &quot;../xx/xx.js&quot;</code>来进行引入并暴露。需要注意的是该模块相当于只转发了一下，它自身是不能直接使用引入的东西的。<br>如下例子，模块化写好API接口后需要整体挂载到VM的原型对象上</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 在index.js引入并暴露
-export &#123; default as trademark &#125; from &#39;.&#x2F;product&#x2F;trademark&#39;
-export &#123; default as attr &#125; from &#39;.&#x2F;product&#x2F;attr&#39;
-export &#123; default as category &#125; from &#39;.&#x2F;product&#x2F;category&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 在main.js引入并挂载
-import * as API from &#39;@&#x2F;api&#x2F;index&#39;
-Vue.prototype.$API &#x3D; API &#x2F;&#x2F; 所有接口请求函数挂载到vue原型中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+let f &#x3D; fn1( );
+f( ) &#x2F;&#x2F; 控制台输出3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>无论是什么方式暴露，暴露出去的都是对象，只不过对象的形成方式不同。默认暴露是以default为键，后面的值为值的对象。部分暴露是把所有暴露的变量封装到一个对象中，整体暴露是我们自己封装了对象暴露出去。</li>
-<li>无论是什么方式暴露，想要直接拿到暴露出去的对象（而不是解构的一部分）那么写法是<pre class="line-numbers language-none"><code class="language-none">import * as obj from &#39;.&#x2F;xxx.js&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-例如<pre class="line-numbers language-none"><code class="language-none">export const a &#x3D; ()&#x3D;&gt;&#123;&#125;
-export const b &#x3D; ()&#x3D;&gt;&#123;&#125;
-import * as $API from &#39;.&#x2F;xxx.js&#39;
-&#x2F;&#x2F; 使用函数
-$API.a()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<h2 id="2-闭包是什么时候产生的"><a href="#2-闭包是什么时候产生的" class="headerlink" title="2.闭包是什么时候产生的"></a>2.闭包是什么时候产生的</h2><p>闭包的产生条件与时机如下</p>
+<ol>
+<li>函数存在嵌套关系</li>
+<li>内部函数引用了外部函数的变量</li>
+<li>外部函数调用,<strong>内部函数定义执行的时候（而不是内部函数执行的时候）</strong>，产生了闭包</li>
 </ol>
+<h2 id="3-闭包是什么时候消失的"><a href="#3-闭包是什么时候消失的" class="headerlink" title="3.闭包是什么时候消失的"></a>3.闭包是什么时候消失的</h2><p>闭包会在内部函数成为垃圾对象的时候。对于上面的例子就是我们手动释放<code>f = null</code>的时候<br>如果不进行释放的话，就会造成内存泄漏的问题，如果内存泄漏较多就会造成内存溢出的问题，简而言之就是内存不够用了</p>
+<hr>
+<h2 id="4-闭包的作用"><a href="#4-闭包的作用" class="headerlink" title="4. 闭包的作用"></a>4. 闭包的作用</h2><p>闭包可以延长外部函数变量对象的生命周期，就是例子中<code>a</code>的生命周期</p>
 
                 
             </div>
@@ -498,7 +437,7 @@ $API.a()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/es6-mo-kuai-hua/">https://sage-scq.github.io/es6-mo-kuai-hua/</a>
+                    <a href="https://sage-scq.github.io/js-zhong-de-bi-bao/">https://sage-scq.github.io/js-zhong-de-bi-bao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,10 +477,6 @@ $API.a()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                             
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
-                                </a>
-                            
-                                <a href="/tags/Es6/">
-                                    <span class="chip bg-color">Es6</span>
                                 </a>
                             
                         </div>
@@ -711,29 +646,80 @@ $API.a()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/css-chang-yong-ju-zhong/">
+                <a href="/js-zhong-de-bi-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="css常用居中">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="JS中的闭包">
                         
-                        <span class="card-title">css常用居中</span>
+                        <span class="card-title">JS中的闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            常用的css对齐方式
+                            什么是闭包，闭包是如何产生的，闭包的作用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/mian-xiang-dui-xiang-yu-mian-xiang-guo-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="面向对象与面向过程">
+                        
+                        <span class="card-title">面向对象与面向过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            面向对象与面向过程编程思想的不同
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -749,57 +735,8 @@ $API.a()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/cong-0-kai-shi-css/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="从0开始css">
-                        
-                        <span class="card-title">从0开始css</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本文是最基础的css应用，不牵扯css3的新增内容与部分高级css技巧。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    前端学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

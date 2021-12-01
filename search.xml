@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>this的指向问题</title>
+      <link href="/this-de-zhi-xiang-wen-ti/"/>
+      <url>/this-de-zhi-xiang-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h1 id="this-的指向问题"><a href="#this-的指向问题" class="headerlink" title="this 的指向问题"></a>this 的指向问题</h1><hr><h2 id="1-直接调用函数"><a href="#1-直接调用函数" class="headerlink" title="1. 直接调用函数"></a>1. 直接调用函数</h2><p>this 指向 window</p><pre class="line-numbers language-none"><code class="language-none">function fn()&#123;    console.log(this)&#125;fn();  &#x2F;&#x2F; window<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="2-构造函数中的-this"><a href="#2-构造函数中的-this" class="headerlink" title="2. 构造函数中的 this"></a>2. 构造函数中的 this</h2><p>this 指向创建的实例对象 ff</p><pre class="line-numbers language-none"><code class="language-none">function F1()&#123;    console.log(this)&#125;const ff &#x3D; new F1();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="3-通过对象调用"><a href="#3-通过对象调用" class="headerlink" title="3. 通过对象调用"></a>3. 通过对象调用</h2><p>this 指向调用的人（谁调用指向谁）</p><pre class="line-numbers language-none"><code class="language-none">const obj &#x3D; &#123;    fn()&#123;        console.log(this)    &#125;&#125;obj.fn() &#x2F;&#x2F; obj<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="4-fn-call-apply-obj-方法调用"><a href="#4-fn-call-apply-obj-方法调用" class="headerlink" title="4. fn.call/apply(obj) 方法调用"></a>4. fn.call/apply(obj) 方法调用</h2><p>this 指向传入的参数。这两个方法可以改变内部 this 的指向<strong>并调用 fn 方法</strong></p><pre class="line-numbers language-none"><code class="language-none">const obj1 &#x3D; &#123;&#125;;const obj2 &#x3D; &#123;    fn()&#123;        console.log(this)    &#125;&#125;obj2.fn.call(obj1) &#x2F;&#x2F; obj1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="5-fn-bind-obj-方法调用"><a href="#5-fn-bind-obj-方法调用" class="headerlink" title="5. fn.bind(obj) 方法调用"></a>5. fn.bind(obj) 方法调用</h2><p>this 指向传入的参数。这个方法可以改变内部 this 的指向<strong>但是不调用 fn 方法</strong></p><pre class="line-numbers language-none"><code class="language-none">const obj1 &#x3D; &#123;&#125;;const obj2 &#x3D; &#123;    fn()&#123;        console.log(this)    &#125;&#125;obj2.ff &#x3D; obj2.fn.bind(obj1) &#x2F;&#x2F; 注意要进行接收obj2.ff() &#x2F;&#x2F; obj1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="6-箭头函数的-this"><a href="#6-箭头函数的-this" class="headerlink" title="6. 箭头函数的 this"></a>6. 箭头函数的 this</h2><p>箭头函数没有自己的 this,它指向外部作用域的 this</p><hr><h2 id="7-回调函数的-this"><a href="#7-回调函数的-this" class="headerlink" title="7. 回调函数的 this"></a>7. 回调函数的 this</h2><ul><li>定时器/ajax/promise/数组遍历相关方法的回调，this 指向 window</li><li>Vue 控制的回调函数，this 指向组件的实例</li></ul><hr><h2 id="8-如何控制函数的-this"><a href="#8-如何控制函数的-this" class="headerlink" title="8. 如何控制函数的 this"></a>8. 如何控制函数的 this</h2><ul><li>利用函数的 bind()</li><li>利用箭头函数</li><li>用外部保存 this 如<code>const that = this</code>再去内部使用<code>that</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS中的闭包</title>
       <link href="/js-zhong-de-bi-bao/"/>
       <url>/js-zhong-de-bi-bao/</url>

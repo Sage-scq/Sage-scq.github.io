@@ -363,14 +363,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    492
+                    546
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -390,10 +390,10 @@
             <div id="articleContent">
                 <h1 id="JavaScript-高级程序设计学习笔记"><a href="#JavaScript-高级程序设计学习笔记" class="headerlink" title="JavaScript 高级程序设计学习笔记"></a>JavaScript 高级程序设计学习笔记</h1><h2 id="第-1-章-HTML-中的-JavaScript"><a href="#第-1-章-HTML-中的-JavaScript" class="headerlink" title="第 1 章.HTML 中的 JavaScript"></a>第 1 章.HTML 中的 JavaScript</h2><h3 id="1-1-lt-script-元素-gt"><a href="#1-1-lt-script-元素-gt" class="headerlink" title="1.1 &lt;script 元素&gt;"></a>1.1 &lt;script 元素&gt;</h3><p>将 javascript 插入 HTML 的主要方式是使用<code>&lt;script&gt;</code><br><code>&lt;script&gt;</code>元素有以下八个属性</p>
 <ol>
-<li><code>async</code>：可选，表示立即开始下载脚本。只对外部脚本有效。</li>
+<li><code>async</code>：可选，表示立即开始下载脚本。只对外部脚本有效。不阻塞文档渲染，但是要注意异步脚本不一定是按顺序执行的了。</li>
 <li><code>charset</code>：可选，使用 src 属性置顶的代码字符集，很少用，大多数浏览器不在乎这个值。</li>
 <li><code>crossorigin</code>：可选，配置相关请求的 cors 跨域设置。默认不使用 cors。</li>
-<li><code>defer</code>：可选，表示页面文档解析完成再执行脚本。</li>
+<li><code>defer</code>：可选，表示页面文档解析完成再执行脚本。推迟的脚本原则上还是从上往下执行。</li>
 <li><code>intergrity</code>：可选，比对接收到的资源与指定的加密签名以验证子资源完整性。如果不匹配页面会报错，该属性可用于确保内容分发网站（CDN）不会提供恶意内容。（没用过这个）</li>
 <li><code>language</code>：废弃了，么得用</li>
 <li><code>src</code>：可选，表示包含要执行的代码的外部文件。经常用哦这个</li>
@@ -408,7 +408,8 @@
 <blockquote>
 <p>注意不管包含的是什么代码浏览器都会按照<code>&lt;script&gt;</code>在页面中的顺序依次解释它们（没有 defer 与 async 属性的情况下），所以一般我们把 script 放在 html 结构的最下方以免阻塞页面。</p>
 </blockquote>
-
+<hr>
+<h2 id="第二章-语言基础"><a href="#第二章-语言基础" class="headerlink" title="第二章.语言基础"></a>第二章.语言基础</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3>
                 
             </div>
             <hr/>
@@ -964,7 +965,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.1k</span>&nbsp;字
+                class="white-color">10.2k</span>&nbsp;字
             
             
             

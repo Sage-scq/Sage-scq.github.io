@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>JavaScript高级程序设计学习笔记</title>
+      <link href="/javascript-gao-ji-cheng-xu-she-ji-xue-xi-bi-ji/"/>
+      <url>/javascript-gao-ji-cheng-xu-she-ji-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript-高级程序设计学习笔记"><a href="#JavaScript-高级程序设计学习笔记" class="headerlink" title="JavaScript 高级程序设计学习笔记"></a>JavaScript 高级程序设计学习笔记</h1><h2 id="第-1-章-HTML-中的-JavaScript"><a href="#第-1-章-HTML-中的-JavaScript" class="headerlink" title="第 1 章.HTML 中的 JavaScript"></a>第 1 章.HTML 中的 JavaScript</h2><h3 id="1-1-lt-script-元素-gt"><a href="#1-1-lt-script-元素-gt" class="headerlink" title="1.1 &lt;script 元素&gt;"></a>1.1 &lt;script 元素&gt;</h3><p>将 javascript 插入 HTML 的主要方式是使用<code>&lt;script&gt;</code><br><code>&lt;script&gt;</code>元素有以下八个属性</p><ol><li><code>async</code>：可选，表示立即开始下载脚本。只对外部脚本有效。</li><li><code>charset</code>：可选，使用 src 属性置顶的代码字符集，很少用，大多数浏览器不在乎这个值。</li><li><code>crossorigin</code>：可选，配置相关请求的 cors 跨域设置。默认不使用 cors。</li><li><code>defer</code>：可选，表示页面文档解析完成再执行脚本。</li><li><code>intergrity</code>：可选，比对接收到的资源与指定的加密签名以验证子资源完整性。如果不匹配页面会报错，该属性可用于确保内容分发网站（CDN）不会提供恶意内容。（没用过这个）</li><li><code>language</code>：废弃了，么得用</li><li><code>src</code>：可选，表示包含要执行的代码的外部文件。经常用哦这个</li><li><code>type</code>：可选，代替 language，表示代码块中脚本语言的内容类型。一般惯例是<code>type=&quot;text/javascript&quot;</code>。注意如果这个值是<code>type=&quot;module&quot;</code>，代码会被当成 ES6<strong>模块</strong>，而且只有这时候代码里才能出现<code>import</code>与<code>export</code>。</li></ol><ul><li><code>&lt;script&gt;</code>属性最为强大的一点就是，src 属性指向的 URL 可以跟包含它的 HTML 页面不在同一个域中。比如下例</li></ul><pre class="line-numbers language-none"><code class="language-none">&lt;script src&#x3D;&quot;http:&#x2F;&#x2F;www.somewhere.com&#x2F;afile.js&quot;&gt;&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>浏览器解析时会向 src 发送一个 get 请求。这个初始的请求不受浏览器同源策略的限制，这就是解决跨域的方式之一（但并不提倡用）。</p><blockquote><p>注意不管包含的是什么代码浏览器都会按照<code>&lt;script&gt;</code>在页面中的顺序依次解释它们（没有 defer 与 async 属性的情况下），所以一般我们把 script 放在 html 结构的最下方以免阻塞页面。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue组件间通信方式</title>
       <link href="/vue-zu-jian-jian-tong-xin-fang-shi/"/>
       <url>/vue-zu-jian-jian-tong-xin-fang-shi/</url>

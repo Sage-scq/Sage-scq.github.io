@@ -356,21 +356,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-12
+                    2021-12-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    546
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -409,7 +409,92 @@
 <p>注意不管包含的是什么代码浏览器都会按照<code>&lt;script&gt;</code>在页面中的顺序依次解释它们（没有 defer 与 async 属性的情况下），所以一般我们把 script 放在 html 结构的最下方以免阻塞页面。</p>
 </blockquote>
 <hr>
-<h2 id="第二章-语言基础"><a href="#第二章-语言基础" class="headerlink" title="第二章.语言基础"></a>第二章.语言基础</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3>
+<h2 id="第二章-语言基础"><a href="#第二章-语言基础" class="headerlink" title="第二章.语言基础"></a>第二章.语言基础</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3><p>ECMAScript 的变量是松散类型，意味着变量可以用于保存任何类型的数据。声明变量有三种方式，<code>var</code>、<code>const</code>、<code>let</code>。</p>
+<h3 id="2-1-1-var-关键字"><a href="#2-1-1-var-关键字" class="headerlink" title="2.1.1 var 关键字"></a>2.1.1 var 关键字</h3><h4 id="2-1-1-1-var-声明作用域"><a href="#2-1-1-1-var-声明作用域" class="headerlink" title="2.1.1.1 var 声明作用域"></a>2.1.1.1 var 声明作用域</h4><p>var 声明的变量会成为包含它的函数的局部变量，如下代码</p>
+<pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
+  var a &#x3D; 1;
+&#125;
+fn1();
+console.log(a) &#x2F;&#x2F; 报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该变量在函数退出时被销毁。注意在函数内部定义变量时如果省略 var，会创建一个<strong>全局变量</strong>，不要这么做！因为全局变量很难维护。如下例</p>
+<pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
+  var a &#x3D; 1;
+&#125;
+fn1()
+console.log(a) &#x2F;&#x2F; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-1-2-var-声明提升"><a href="#2-1-1-2-var-声明提升" class="headerlink" title="2.1.1.2 var 声明提升"></a>2.1.1.2 var 声明提升</h4><p>先看一段代码</p>
+<pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
+  console.log(age);
+  var age &#x3D; 26;
+&#125;
+fn1(); &#x2F;&#x2F; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里并没有报错，因为使用 var 声明的变量会自动提升到函数作用域顶部，那么这段代码其实相当于</p>
+<pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
+  var age;
+  console.log(age);
+  age&#x3D;26;
+&#125;
+fn1();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-1-2-let-声明"><a href="#2-1-2-let-声明" class="headerlink" title="2.1.2 let 声明"></a>2.1.2 let 声明</h3><p>let 与 var 类似，但是最重要的区别是 let 声明的范围是<strong>块作用域</strong>，而 var 是函数作用域<br>比如下面这段代码可以明显看到 var 与 let 的区别</p>
+<pre class="line-numbers language-none"><code class="language-none">if(true)&#123;
+  var a &#x3D; 1;
+&#125;
+console.log(a) &#x2F;&#x2F; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">if(true)&#123;
+  let a &#x3D; 1;
+&#125;
+console.log(a) &#x2F;&#x2F; 报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-2-1-暂时性死区"><a href="#2-1-2-1-暂时性死区" class="headerlink" title="2.1.2.1 暂时性死区"></a>2.1.2.1 暂时性死区</h4><p>let 与 var 另一个重要的区别，就是 let 声明的变量不会在作用域中提升。所以在 let 声明之前的执行瞬间被称为暂时性死区，在此阶段引用后面用 let 声明的变量就会报错。如下</p>
+<pre class="line-numbers language-none"><code class="language-none">console.log(a); &#x2F;&#x2F; ReferenceError:a没有定义
+let a &#x3D; 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-2-2-全局声明"><a href="#2-1-2-2-全局声明" class="headerlink" title="2.1.2.2 全局声明"></a>2.1.2.2 全局声明</h4><p>var 如果在全局作用域中声明，就会成为全局变量。而 let 就不会成为 window 对象的属性。但是 let 声明依然是在全局作用域中发生的，如果后面再 let 同一个变量依然会 SyntaxError.</p>
+<pre class="line-numbers language-none"><code class="language-none">var a &#x3D; 1;
+console.log(window.a); &#x2F;&#x2F; 1
+
+let b &#x3D; 1;
+console.log(window.b); &#x2F;&#x2F; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-2-3-for-循环中的-let-声明"><a href="#2-1-2-3-for-循环中的-let-声明" class="headerlink" title="2.1.2.3 for 循环中的 let 声明"></a>2.1.2.3 for 循环中的 let 声明</h4><p>let 出现之前，for 循环定义的迭代变量会渗透到循环体外部</p>
+<pre class="line-numbers language-none"><code class="language-none">for (var i &#x3D; 0; i&lt;5: i++;)&#123;
+  &#x2F;&#x2F;循环逻辑
+&#125;
+console.log(i) &#x2F;&#x2F; 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 let 后这个问题迎刃而解，迭代变量的作用域仅限于 for 循环块内部。</p>
+<pre class="line-numbers language-none"><code class="language-none">for (var i &#x3D; 0; i&lt;5: i++;)&#123;
+  &#x2F;&#x2F;循环逻辑
+&#125;
+console.log(i) &#x2F;&#x2F; 报错 i没有定义<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 var 时常见的问题是对迭代变量的奇特声明和修改。</p>
+<pre class="line-numbers language-none"><code class="language-none">for (var i &#x3D; 0; i&lt;5: i++;)&#123;
+  setTimeout(()&#x3D;&gt;&#123;
+    console.log(i)
+  &#125;，0)
+&#125;
+&#x2F;&#x2F; 输出的不是1，2，3，4，5
+&#x2F;&#x2F; 输出的是5，5，5，5，5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>之所以会这样是因为退出循环时，迭代变量保存的是 5。在之后执行超时逻辑的时候，所有的 i 都是 5。<br>而 let 则不同。</p>
+<pre class="line-numbers language-none"><code class="language-none">for (let i &#x3D; 0; i&lt;5: i++;)&#123;
+  setTimeout(()&#x3D;&gt;&#123;
+    console.log(i)
+  &#125;，0)
+&#125;
+&#x2F;&#x2F; 输出1，2，3，4，5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 let 声明迭代变量时，javascript 引擎在后台为每个迭代循环声明一个新的迭代变量。每个 setTimeout 引用的都是不同的变量实例。</p>
+<blockquote>
+<p>这种每次迭代声明一个独立变量实例的行为适用于所有的 for 循环，包括<code>for-in</code>和<code>for-of</code>。</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -965,7 +1050,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.2k</span>&nbsp;字
+                class="white-color">11k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue组件间通信方式, Sage的博客">
+    <meta name="keywords" content=".sync运用————双向绑定多个属性, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue组件间通信方式 | Sage的博客</title>
+    <title>.sync运用————双向绑定多个属性 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue组件间通信方式</h1>
+                    <h1 class="description center-align post-title">.sync运用————双向绑定多个属性</h1>
                 </div>
             </div>
         </div>
@@ -328,8 +328,12 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/VUE/">
-                                <span class="chip bg-color">VUE</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">前端知识</span>
                             </a>
                         
                     </div>
@@ -353,28 +357,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-01
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-01
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    593
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -392,67 +396,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue-组件间通信方式"><a href="#Vue-组件间通信方式" class="headerlink" title="Vue 组件间通信方式"></a>Vue 组件间通信方式</h1><hr>
-<h2 id="1-根据通信的组件间关系分类"><a href="#1-根据通信的组件间关系分类" class="headerlink" title="1. 根据通信的组件间关系分类"></a>1. 根据通信的组件间关系分类</h2><ul>
-<li><strong>父子组件</strong><br>props<br>vue 自定义事件<br>v-model<br>.sync<br>$ref,$childre 与$parent<br>插槽（作用域插槽）</li>
-<li><strong>祖孙组件</strong><br>$attrs与$listeners<br>provide 与 inject</li>
-<li><strong>任意组件间通信</strong><br>全局事件总线<br>Vuex</li>
-</ul>
-<hr>
-<h2 id="2-props"><a href="#2-props" class="headerlink" title="2.props"></a>2.props</h2><ol>
-<li>实现父向子通信：属性值是非函数</li>
-<li>实现子向父通信：属性值是函数（不常用）</li>
-</ol>
-<p>父组件中：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;blog-post :post&#x3D;&quot;post&quot;&gt;&lt;&#x2F;blog-post&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>子组件中：</p>
-<pre class="line-numbers language-none"><code class="language-none">props:[&#39;post&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>或者对象写法：</p>
-<pre class="line-numbers language-none"><code class="language-none">props:&#123;
-    post:String
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<hr>
-<h2 id="3-vue-自定义事件"><a href="#3-vue-自定义事件" class="headerlink" title="3. vue 自定义事件"></a>3. vue 自定义事件</h2><p>用来实现子组件向父组件通信<br>父组件中绑定自定义事件监听:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;Child @eventName&#x3D;&quot;callback&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>子组件中分发事件</p>
-<pre class="line-numbers language-none"><code class="language-none">this.$emit(&#39;eventName&#39;, data)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h2 id="4-全局事件总线"><a href="#4-全局事件总线" class="headerlink" title="4. 全局事件总线"></a>4. 全局事件总线</h2><p>实现任意组件间通信<br>将入口 js 中的 vm 作为全局事件总线对象:</p>
-<pre class="line-numbers language-none"><code class="language-none">beforeCreate() &#123;
-        Vue.prototype.$bus &#x3D;this
-    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>分发事件/传递数据的组件:</p>
-<pre class="line-numbers language-none"><code class="language-none">this.$bus.$emit(&#39;eventName&#39;, data)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>处理事件/接收数据的组件:</p>
-<pre class="line-numbers language-none"><code class="language-none">this.$bus.$on(&#39;eventName&#39;, (data) &#x3D;&gt; &#123;&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h2 id="5-v-model"><a href="#5-v-model" class="headerlink" title="5.v-model"></a>5.v-model</h2><ol>
-<li>实现父子之间相互通信/同步</li>
-<li>组件标签上的 <code>v-model</code> 的本质: 动态 <code>value</code> 属性与自定义 <code>input</code> 监听来接收子组件分发的数据更新父组件数据</li>
-</ol>
-<p>父组件:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;CustomInput v-model&#x3D;&quot;name&quot;&#x2F;&gt;
-&lt;!-- 等价于 --&gt;
-&lt;CustomInput :value&#x3D;&quot;name&quot; @input&#x3D;&quot;name&#x3D;$event&quot;&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>子组件：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;input type&#x3D;&quot;text&quot; :value&#x3D;&quot;value&quot; @input&#x3D;&quot;$emit(&#39;input&#39;, $event.targetvalue)&quot;&gt;
-props: [&#39;value&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<hr>
-<h2 id="6-sync"><a href="#6-sync" class="headerlink" title="6. .sync"></a>6. .sync</h2><ol>
-<li>实现父子之间相互通信/同步(在原本父向子的基础上增加子向父)</li>
-<li>组件标签的属性上使用<code>.sync</code> 的本质: 通过事件监听来接收子组件分发过来的数据并更新父组件的数据</li>
-</ol>
-<p>父组件:</p>
+                <h1 id="sync-运用————双向绑定多个属性"><a href="#sync-运用————双向绑定多个属性" class="headerlink" title=".sync 运用————双向绑定多个属性"></a>.sync 运用————双向绑定多个属性</h1><h2 id="1-sync-介绍"><a href="#1-sync-介绍" class="headerlink" title="1. .sync 介绍"></a>1. .sync 介绍</h2><p>.sync 可以用于 vue 中子组件向父组件通信<br>通常用法如下<br>父组件:</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;child :money.sync&#x3D;&quot;total&quot;&#x2F;&gt;
 &lt;!-- 等价于 --&gt;
 &lt;Child :money&#x3D;&quot;total @update:money&#x3D;&quot;total&#x3D;$event&quot;&#x2F;&gt;
@@ -467,42 +411,46 @@ data () &#123;
 <pre class="line-numbers language-none"><code class="language-none">&lt;button @click&#x3D;&quot;$emit(&#39;update:money&#39;, money-100)&quot;&gt;花钱&lt;&#x2F;button&gt;
 props: [&#39;money&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<hr>
-<h2 id="7-attrs与-listeners"><a href="#7-attrs与-listeners" class="headerlink" title="7. $attrs与$listeners"></a>7. $attrs与$listeners</h2><ol>
-<li>$attrs<br> 实现当前组件的父组件向当前组件的子组件通信<br> 它是包含所有父组件传入的标签属性(排除<code>props</code>声明, <code>class</code>与<code>style</code>的属性)的对象<br> 使用: 通过<code>v-bind=&quot;$attrs&quot;</code>将父组件传入的 n 个属性数据传递给当前组件的子组件</li>
-<li>$listeners<br> 实现当前组件的子组件向当前组件的父组件通信<br> <code>$listeners </code>是包含所有父组件传入的自定义事件监听名与对应回调函数的对象 使用: 通过 <code>v-on=&quot;$listeners&quot;</code> 将父组件绑定给当前组件的事件监听绑定给当前组件的子组件</li>
-</ol>
-<hr>
-<h2 id="8-refs-children-parent"><a href="#8-refs-children-parent" class="headerlink" title="8. $refs, $children, $parent"></a>8. $refs, $children, $parent</h2><ol>
-<li>$refs<br> 实现父组件向指定子组件通信<br> <code>$refs</code>是包含所有有<code>ref</code>属性的标签对象或组件对象的容器对象 使用: 通过<code>this.$refs.child</code> 得到子组件对象, 从而可以直接更新其数据或调用其方法更新数据</li>
-<li>$children<br> 实现父组件向多个子组件通信<br> <code>$children</code>是所有直接子组件对象的数组 使用: 通过<code>this.$children</code> 遍历子组件对象, 从而可以更新多个子组件的数据</li>
-<li>$parent<br> 实现子组件向父组件通信<br> <code>$parent</code>是当前组件的父组件对象 使用: 通过<code>this.$parent</code> 得到父组件对象, 从而可以更新父组件的数据</li>
-</ol>
-<hr>
-<h2 id="9-provide-与-inject"><a href="#9-provide-与-inject" class="headerlink" title="9. provide 与 inject"></a>9. provide 与 inject</h2><ol>
-<li>实现祖孙组件间直接通信</li>
-<li>在祖组件中通过 <code>provide</code> 配置向后代组件提供数据<br>在后代组件中通过 <code>inject</code> 配置来声明接收数据</li>
-<li>注意:<br>不太建议在应用开发中使用, 一般用来封装 vue 插件<br>provide 提供的数据本身不是响应式的 ==&gt; 父组件更新了数据, 后代组件不会变化<br>provide 提供的数据对象内部是响应式的 ==&gt; 父组件更新了数据, 后代组件也会变化</li>
-</ol>
-<hr>
-<h2 id="10-Vuex"><a href="#10-Vuex" class="headerlink" title="10. Vuex"></a>10. Vuex</h2><ol>
-<li>实现任意组件间通信</li>
-<li>Vuex 是一个专为 Vue 应用程序设计的管理多组件共享状态数据的 Vue 插件<br>任意组件都可以读取到 Vuex 中 store 的 state 对象中的数据<br>任意组件都可以通过 <code>dispatch()</code>或 <code>commit()</code>来触发 store 去更新 <code>state</code> 中的数据<br>一旦 state 中的数据发生变化, 依赖于这些数据的组件就会自动更新</li>
-</ol>
-<hr>
-<h2 id="11-插槽-gt-作用域插槽-slot-scope"><a href="#11-插槽-gt-作用域插槽-slot-scope" class="headerlink" title="11. 插槽 ==&gt; 作用域插槽 slot-scope"></a>11. 插槽 ==&gt; 作用域插槽 slot-scope</h2><ol>
-<li>实现父组件向子组件传递标签内容</li>
-<li>什么情况下使用作用域插槽?<br>父组件需要向子组件传递标签结构内容<br>但决定父组件传递怎样标签结构的数据在子组件中</li>
-<li>编码：</li>
-</ol>
-<p>父组件:</p>
-<pre class="line-numbers language-none"><code class="language-none"> &lt;template slot-scope&#x3D;&quot;&#123;row, $index&#125;&quot;&gt;
-    &lt;span&gt;&#123;&#123;$index+1&#125;&#125;&lt;&#x2F;span&gt;nbsp;&amp;nbsp;
-    &lt;span :style&#x3D;&quot;&#123;color$index%2&#x3D;&#x3D;&#x3D;1 ? &#39;blue&#39; &#39;green&#39;&#125;&quot; &gt;&#123;&#123;row.text&#125;&#125;&lt;&#x2F;span&gt;
-&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-sync-如何进行多个属性的双向绑定"><a href="#2-sync-如何进行多个属性的双向绑定" class="headerlink" title="2. .sync 如何进行多个属性的双向绑定"></a>2. .sync 如何进行多个属性的双向绑定</h2><p>在公司写项目的时候遇到了这个问题，公用组件是别人封装好的，该组件有两个 input 框平行排列，双击左边的输入域会弹出一个 dialog，进行树形结构的选择。在选择一个节点后，该组件作者进行双向绑定的 @input 事件如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 设置值并emit
+selectCode(item, code, desc) &#123;
+    this.item &#x3D; item
+    this.codeVal &#x3D; code
+    this.descVal &#x3D; desc
+    &#x2F;&#x2F; 双向绑定
+    this.$emit(&#39;input&#39;, this.codeVal)
+    &#x2F;&#x2F; emit对象
+    this.$emit(&#39;item&#39;, this.getItem())
+&#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>子组件:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;slot :row&#x3D;&quot;item&quot; :$index&#x3D;&quot;index&quot;&gt;  &lt;!-- slot的属性会自动传递给父组件 --&gt;&lt;&#x2F;slot&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可以看到，虽然<code>descVal</code>有值，但是输出的只有<code>codeVal</code>。<br>而我的需求是需要获取道<code>descVal</code>的值来发送请求，使用组件的代码如下</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template slot-scope&#x3D;&quot;scope&quot;&gt;
+    &lt;TreeCodeSelector v-model&#x3D;&quot;scope.row.comCode&quot; type&#x3D;&quot;comCode&quot; &#x2F;&gt;
+&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看到，v-model 只能获取到<code>codeVal</code>。<br>解决办法就是在公用组件中添加代码</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 设置值并emit
+selectCode(item, code, desc) &#123;
+    this.item &#x3D; item
+    this.codeVal &#x3D; code
+    this.descVal &#x3D; desc
+    &#x2F;&#x2F; 双向绑定
+    this.$emit(&#39;input&#39;, this.codeVal)
+    &#x2F;&#x2F; .sync绑定comcName 新添加的语句
+    this.$emit(&#39;update:comcname&#39;,this.descVal)
+    &#x2F;&#x2F; emit对象
+    this.$emit(&#39;item&#39;, this.getItem())
+&#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么在触发这个事件后，comcname 这个位于父组件的值就会更新，更新的值是我们传入的 descVal<br>父组件中的写法如下</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template slot-scope&#x3D;&quot;scope&quot;&gt;
+    &lt;TreeCodeSelector v-model&#x3D;&quot;scope.row.comCode&quot; type&#x3D;&quot;comCode&quot; :comcname.sync&#x3D;&quot;scope.row.comcName&quot; &#x2F;&gt;
+&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>我们把<code>comcname</code>这个属性传给了<code>scope.row.comcName</code>，达到了目的。</p>
+<blockquote>
+<p>这个方法会不会对没有写<code>:comcname.sync</code>的父组件产生影响报错还未实验。同时如果.sync 可以写多个的话，就达成了自定义组件的多个数据双向绑定，还是很有用的。</p>
+</blockquote>
 
                 
             </div>
@@ -529,7 +477,7 @@ props: [&#39;money&#39;]<span aria-hidden="true" class="line-numbers-rows"><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sage-scq.github.io/vue-zu-jian-jian-tong-xin-fang-shi/">https://sage-scq.github.io/vue-zu-jian-jian-tong-xin-fang-shi/</a>
+                    <a href="https://sage-scq.github.io/sync-yun-yong-shuang-xiang-bang-ding-duo-ge-shu-xing/">https://sage-scq.github.io/sync-yun-yong-shuang-xiang-bang-ding-duo-ge-shu-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,8 +519,12 @@ props: [&#39;money&#39;]<span aria-hidden="true" class="line-numbers-rows"><span
                                     <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
-                                <a href="/tags/VUE/">
-                                    <span class="chip bg-color">VUE</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">前端知识</span>
                                 </a>
                             
                         </div>
@@ -742,9 +694,68 @@ props: [&#39;money&#39;]<span aria-hidden="true" class="line-numbers-rows"><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/sync-yun-yong-shuang-xiang-bang-ding-duo-ge-shu-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt=".sync运用————双向绑定多个属性">
+                        
+                        <span class="card-title">.sync运用————双向绑定多个属性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            常见情况this的指向问题
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/javascript-gao-ji-cheng-xu-she-ji-xue-xi-bi-ji/">
                     <div class="card-image">
@@ -762,64 +773,15 @@ props: [&#39;money&#39;]<span aria-hidden="true" class="line-numbers-rows"><span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
                                     前端学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/this-de-zhi-xiang-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="this的指向问题">
-                        
-                        <span class="card-title">this的指向问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            常见情况this的指向问题
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    前端知识
                                 </a>
                             
                             

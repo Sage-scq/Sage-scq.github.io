@@ -356,21 +356,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-14
+                    2022-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    8 分
                 </div>
                 
 
@@ -410,7 +410,7 @@
 </blockquote>
 <hr>
 <h2 id="第二章-语言基础"><a href="#第二章-语言基础" class="headerlink" title="第二章.语言基础"></a>第二章.语言基础</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3><p>ECMAScript 的变量是松散类型，意味着变量可以用于保存任何类型的数据。声明变量有三种方式，<code>var</code>、<code>const</code>、<code>let</code>。</p>
-<h3 id="2-1-1-var-关键字"><a href="#2-1-1-var-关键字" class="headerlink" title="2.1.1 var 关键字"></a>2.1.1 var 关键字</h3><h4 id="2-1-1-1-var-声明作用域"><a href="#2-1-1-1-var-声明作用域" class="headerlink" title="2.1.1.1 var 声明作用域"></a>2.1.1.1 var 声明作用域</h4><p>var 声明的变量会成为包含它的函数的局部变量，如下代码</p>
+<h4 id="2-1-1-var-关键字"><a href="#2-1-1-var-关键字" class="headerlink" title="2.1.1 var 关键字"></a>2.1.1 var 关键字</h4><h5 id="2-1-1-1-var-声明作用域"><a href="#2-1-1-1-var-声明作用域" class="headerlink" title="2.1.1.1 var 声明作用域"></a>2.1.1.1 var 声明作用域</h5><p>var 声明的变量会成为包含它的函数的局部变量，如下代码</p>
 <pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
   var a &#x3D; 1;
 &#125;
@@ -424,7 +424,7 @@ console.log(a) &#x2F;&#x2F; 报错<span aria-hidden="true" class="line-numbers-r
 fn1()
 console.log(a) &#x2F;&#x2F; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-1-1-2-var-声明提升"><a href="#2-1-1-2-var-声明提升" class="headerlink" title="2.1.1.2 var 声明提升"></a>2.1.1.2 var 声明提升</h4><p>先看一段代码</p>
+<h5 id="2-1-1-2-var-声明提升"><a href="#2-1-1-2-var-声明提升" class="headerlink" title="2.1.1.2 var 声明提升"></a>2.1.1.2 var 声明提升</h5><p>先看一段代码</p>
 <pre class="line-numbers language-none"><code class="language-none">function fn1()&#123;
   console.log(age);
   var age &#x3D; 26;
@@ -439,7 +439,7 @@ fn1(); &#x2F;&#x2F; undefined<span aria-hidden="true" class="line-numbers-rows">
 &#125;
 fn1();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-1-2-let-声明"><a href="#2-1-2-let-声明" class="headerlink" title="2.1.2 let 声明"></a>2.1.2 let 声明</h3><p>let 与 var 类似，但是最重要的区别是 let 声明的范围是<strong>块作用域</strong>，而 var 是函数作用域<br>比如下面这段代码可以明显看到 var 与 let 的区别</p>
+<h4 id="2-1-2-let-声明"><a href="#2-1-2-let-声明" class="headerlink" title="2.1.2 let 声明"></a>2.1.2 let 声明</h4><p>let 与 var 类似，但是最重要的区别是 let 声明的范围是<strong>块作用域</strong>，而 var 是函数作用域<br>比如下面这段代码可以明显看到 var 与 let 的区别</p>
 <pre class="line-numbers language-none"><code class="language-none">if(true)&#123;
   var a &#x3D; 1;
 &#125;
@@ -450,18 +450,18 @@ console.log(a) &#x2F;&#x2F; 1<span aria-hidden="true" class="line-numbers-rows">
 &#125;
 console.log(a) &#x2F;&#x2F; 报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-1-2-1-暂时性死区"><a href="#2-1-2-1-暂时性死区" class="headerlink" title="2.1.2.1 暂时性死区"></a>2.1.2.1 暂时性死区</h4><p>let 与 var 另一个重要的区别，就是 let 声明的变量不会在作用域中提升。所以在 let 声明之前的执行瞬间被称为暂时性死区，在此阶段引用后面用 let 声明的变量就会报错。如下</p>
+<h5 id="2-1-2-1-暂时性死区"><a href="#2-1-2-1-暂时性死区" class="headerlink" title="2.1.2.1 暂时性死区"></a>2.1.2.1 暂时性死区</h5><p>let 与 var 另一个重要的区别，就是 let 声明的变量不会在作用域中提升。所以在 let 声明之前的执行瞬间被称为暂时性死区，在此阶段引用后面用 let 声明的变量就会报错。如下</p>
 <pre class="line-numbers language-none"><code class="language-none">console.log(a); &#x2F;&#x2F; ReferenceError:a没有定义
 let a &#x3D; 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="2-1-2-2-全局声明"><a href="#2-1-2-2-全局声明" class="headerlink" title="2.1.2.2 全局声明"></a>2.1.2.2 全局声明</h4><p>var 如果在全局作用域中声明，就会成为全局变量。而 let 就不会成为 window 对象的属性。但是 let 声明依然是在全局作用域中发生的，如果后面再 let 同一个变量依然会 SyntaxError.</p>
+<h5 id="2-1-2-2-全局声明"><a href="#2-1-2-2-全局声明" class="headerlink" title="2.1.2.2 全局声明"></a>2.1.2.2 全局声明</h5><p>var 如果在全局作用域中声明，就会成为全局变量。而 let 就不会成为 window 对象的属性。但是 let 声明依然是在全局作用域中发生的，如果后面再 let 同一个变量依然会 SyntaxError.</p>
 <pre class="line-numbers language-none"><code class="language-none">var a &#x3D; 1;
 console.log(window.a); &#x2F;&#x2F; 1
 
 let b &#x3D; 1;
 console.log(window.b); &#x2F;&#x2F; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-1-2-3-for-循环中的-let-声明"><a href="#2-1-2-3-for-循环中的-let-声明" class="headerlink" title="2.1.2.3 for 循环中的 let 声明"></a>2.1.2.3 for 循环中的 let 声明</h4><p>let 出现之前，for 循环定义的迭代变量会渗透到循环体外部</p>
+<h5 id="2-1-2-3-for-循环中的-let-声明"><a href="#2-1-2-3-for-循环中的-let-声明" class="headerlink" title="2.1.2.3 for 循环中的 let 声明"></a>2.1.2.3 for 循环中的 let 声明</h5><p>let 出现之前，for 循环定义的迭代变量会渗透到循环体外部</p>
 <pre class="line-numbers language-none"><code class="language-none">for (var i &#x3D; 0; i&lt;5: i++;)&#123;
   &#x2F;&#x2F;循环逻辑
 &#125;
@@ -493,6 +493,36 @@ console.log(i) &#x2F;&#x2F; 报错 i没有定义<span aria-hidden="true" class="
 <p>使用 let 声明迭代变量时，javascript 引擎在后台为每个迭代循环声明一个新的迭代变量。每个 setTimeout 引用的都是不同的变量实例。</p>
 <blockquote>
 <p>这种每次迭代声明一个独立变量实例的行为适用于所有的 for 循环，包括<code>for-in</code>和<code>for-of</code>。</p>
+</blockquote>
+<h4 id="2-1-3-const-声明"><a href="#2-1-3-const-声明" class="headerlink" title="2.1.3 const 声明"></a>2.1.3 const 声明</h4><p><code>const</code>与<code>let</code>基本一致，重要的区别是 const 的时候必须初始化变量。同时需要注意的是，<code>const</code>声明不能修改的限制只适用于指向变量的引用，比如下面这种不修改引用地址的行为并不会报错。</p>
+<pre class="line-numbers language-none"><code class="language-none">const person &#x3D; &#123;&#125;
+person.name &#x3D; &#39;scq&#39;  &#x2F;&#x2F; 并不会报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="2-2-数据类型"><a href="#2-2-数据类型" class="headerlink" title="2.2 数据类型"></a>2.2 数据类型</h3><p>简单数据类型（原始类型）有 6 种：<code>Undefined</code>,<code>Null</code>,<code>Boolean</code>,<code>Number</code>,<code>String</code>,<code>Symbol</code>,还有一种复杂数据类型叫<code>Object</code>。</p>
+<h4 id="2-2-1-typeof-操作符"><a href="#2-2-1-typeof-操作符" class="headerlink" title="2.2.1 typeof 操作符"></a>2.2.1 typeof 操作符</h4><p>简单的来说,<code>typeof</code>操作符可以鉴别出<code>Undefined</code>,<code>Boolean</code>,<code>,Number</code>,<code>String</code>,<code>Symbol</code>这 5 种简单数据类型。而对于<code>Object</code>与<code>Null</code>都会返回<code>Object</code>。因为特殊值 null 被认为是对一个空对象的引用。</p>
+<h4 id="2-2-2-Undefined"><a href="#2-2-2-Undefined" class="headerlink" title="2.2.2 Undefined"></a>2.2.2 Undefined</h4><p><code>Undefined</code>类型只有一个值，就是 Undefined。当使用 var 或 let 声明但没有初始化的时候，就相当于变量被赋予了 Undefined。（个人认为 undefined 用的不多）</p>
+<h4 id="2-2-3-Null"><a href="#2-2-3-Null" class="headerlink" title="2.2.3 Null"></a>2.2.3 Null</h4><p>Null 类型也只有一个值就是 Null。<strong>在定义将来要保存对象值的变量时，可以使用 Null</strong>。或者是在手动清理垃圾变量的时候可以赋值 Null。一般也用不到。</p>
+<h4 id="2-2-4-Boolean"><a href="#2-2-4-Boolean" class="headerlink" title="2.2.4 Boolean"></a>2.2.4 Boolean</h4><p>布尔值，有两个字面值：<code>true</code>和<code>false</code>。需要注意，也容易混淆的是，<strong>true 不等于 1，false 不等于 0！</strong><br>注意流控制语句如 if 等会自动执行其他类型值道布尔值的转换，比如我们经常如下写</p>
+<pre class="line-numbers language-none"><code class="language-none">if(a)&#123;
+  ...
+&#125;
+&#x2F;&#x2F; 等价于
+if(true)&#123;
+  ...
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-2-5-Number"><a href="#2-2-5-Number" class="headerlink" title="2.2.5 Number"></a>2.2.5 Number</h4><p>Number 类型的值使用 IEEE 754 格式表示整数与浮点值（双精度值）。不同的数据类型相应有不同的数值字面量格式，但是其他进制在实际中运用不多，这里先不记了。</p>
+<h5 id="2-2-5-1-浮点值"><a href="#2-2-5-1-浮点值" class="headerlink" title="2.2.5.1 浮点值"></a>2.2.5.1 浮点值</h5><p>浮点值就是数值种 2 包含小数点，且小数点后面必须至少有一个数字。<br>由于存储浮点值使用的内存空间是整数值的两倍，所以 js 在小数点后没有数字的情况下会自动将浮点值转换为整数。如下两种</p>
+<pre class="line-numbers language-none"><code class="language-none">let num1 &#x3D; 1.
+let num2 &#x3D; 10.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>对于非常大或者非常小的数值，浮点值可以用科学记数法表示。如<code>3.125e7</code>就是 3125000<br>一个非常需要注意的地方是，浮点值的精度最高 17 位小数，但是在算数计算中远不如整数精准。如 0.1+0.2 并不是 0.3，而是 0.300000000000000004。<strong>永远不要做下面这个事情！</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">if(0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3)&#123;
+  console.log(&#39;0.3&#39;)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>存在这种舍入错误是因为使用了 IEEE 754 数值，像 0.1+0.2 这样的操作对于计算机来说转换为二进制之后将是两个无限循环的数。而对于计算机而言是不允许有无限的，进行四舍五入之后双精度浮点数保留 52 位，结果为 0.0100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 转为十进制就是 0.30000000000000004。</p>
 </blockquote>
 
                 
@@ -1047,7 +1077,7 @@ console.log(i) &#x2F;&#x2F; 报错 i没有定义<span aria-hidden="true" class="
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Sage</a>
@@ -1056,7 +1086,7 @@ console.log(i) &#x2F;&#x2F; 报错 i没有定义<span aria-hidden="true" class="
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.6k</span>&nbsp;字
+                class="white-color">12.4k</span>&nbsp;字
             
             
             

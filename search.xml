@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>数据结构与算法</title>
+      <link href="/shu-ju-jie-gou-yu-suan-fa/"/>
+      <url>/shu-ju-jie-gou-yu-suan-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数据结构与算法学习笔记"><a href="#数据结构与算法学习笔记" class="headerlink" title="数据结构与算法学习笔记"></a>数据结构与算法学习笔记</h1><h2 id="1-线性表"><a href="#1-线性表" class="headerlink" title="1.线性表"></a>1.线性表</h2><h3 id="1-1-线性表的定义与特点"><a href="#1-1-线性表的定义与特点" class="headerlink" title="1.1 线性表的定义与特点"></a>1.1 线性表的定义与特点</h3><ol><li>定义：线性表是具有相同特性的数据元素的一个有限序列<img src="/shu-ju-jie-gou-yu-suan-fa/img1.png" class=""></li><li>特点：同一个线性表中的元素必然具有<strong>相同特性</strong>，数据元素间的关系是<strong>线性关系</strong></li></ol><h3 id="1-2-线性表的顺序结构与实现"><a href="#1-2-线性表的顺序结构与实现" class="headerlink" title="1.2 线性表的顺序结构与实现"></a>1.2 线性表的顺序结构与实现</h3><p>线性表的顺序表示又称为<strong>顺序存储结构</strong>或<strong>顺序映像</strong></p><blockquote><p>定义：把逻辑上相邻的数据元素存储在物理上相邻的存储单元中的存储结构</p></blockquote><img src="/shu-ju-jie-gou-yu-suan-fa/img2.png" class=""><p>由于该种存储结构，任何一个元素的存储位置都可以由第一个元素的存储地址（基地址）推算得来</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>.sync运用————双向绑定多个属性</title>
       <link href="/sync-yun-yong-shuang-xiang-bang-ding-duo-ge-shu-xing/"/>
       <url>/sync-yun-yong-shuang-xiang-bang-ding-duo-ge-shu-xing/</url>

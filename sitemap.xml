@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sage-scq.github.io/shu-ju-jie-gou-yu-suan-fa/</loc>
+    
+    <lastmod>2022-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sage-scq.github.io/javascript-gao-ji-cheng-xu-she-ji-xue-xi-bi-ji/</loc>
     
     <lastmod>2022-01-04</lastmod>
@@ -220,7 +229,7 @@
 
   <url>
     <loc>https://sage-scq.github.io/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -228,70 +237,70 @@
   
   <url>
     <loc>https://sage-scq.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/Vue/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/css/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/Es6/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/HTML5/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/HTML/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/VUE/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/ES6/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -300,21 +309,21 @@
   
   <url>
     <loc>https://sage-scq.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sage-scq.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

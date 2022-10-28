@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>$nextTick()的运用</title>
+      <link href="/nexttick-de-yun-yong/"/>
+      <url>/nexttick-de-yun-yong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick()"></a>$nextTick()</h1><h2 id="1-什么是-nextTick"><a href="#1-什么是-nextTick" class="headerlink" title="1.什么是$nextTick()"></a>1.什么是$nextTick()</h2><p>简而言之，就是我们更新了页面的数据，vue会去自动重新渲染数据涉及到的dom。$nextTick()会返回一个Promise,then里面就是这个dom渲染之后的回调。</p><h2 id="2-什么时候会用到？"><a href="#2-什么时候会用到？" class="headerlink" title="2.什么时候会用到？"></a>2.什么时候会用到？</h2><p>我做的项目中一个很典型的例子就是，组件间有相当多的通信。比如A组件的一个值改变了，A组件通知B组件，B组件更新一部分的值，然后<strong>在B组件更新完自己的状态后</strong>主组件再去调用接口，入参包括B组件更新后的这部分值。这时主组件中就一定要写<code>await this.$refs.B.$nextTick()</code>,意思就是等B组件更新完数据再去使用。不然这个接口的入参就还是更新之前的，会出现问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构与算法</title>
       <link href="/shu-ju-jie-gou-yu-suan-fa/"/>
       <url>/shu-ju-jie-gou-yu-suan-fa/</url>

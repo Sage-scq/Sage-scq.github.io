@@ -4,7 +4,7 @@
  
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue路由的两种模式, Sage的博客">
+    <meta name="keywords" content="$nextTick()的运用, Sage的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue路由的两种模式 | Sage的博客</title>
+    <title>$nextTick()的运用 | Sage的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue路由的两种模式</h1>
+                    <h1 class="description center-align post-title">$nextTick()的运用</h1>
                 </div>
             </div>
         </div>
@@ -328,8 +328,8 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/VUE/">
-                                <span class="chip bg-color">VUE</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                     </div>
@@ -353,21 +353,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2022-10-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2022-10-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    365
+                    215
                 </div>
                 
 
@@ -392,30 +392,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue路由的两种模式"><a href="#Vue路由的两种模式" class="headerlink" title="Vue路由的两种模式"></a>Vue路由的两种模式</h1><hr>
-<h2 id="1-hash模式"><a href="#1-hash模式" class="headerlink" title="1. hash模式"></a>1. hash模式</h2><h3 id="1-1-什么是hash值"><a href="#1-1-什么是hash值" class="headerlink" title="1.1. 什么是hash值"></a>1.1. 什么是hash值</h3><p>对于一个URL来说，<code>#</code>及其后面的值就是hash值</p>
-<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;pan.baidu.com&#x2F;disk&#x2F;home#list&#x2F;vmode&#x3D;list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>那么<code>#list/vmode=list</code>就是哈希值</p>
-<h3 id="1-2-hash值的特点"><a href="#1-2-hash值的特点" class="headerlink" title="1.2. hash值的特点"></a>1.2. hash值的特点</h3><p>hash值<strong>不会</strong>包含在http<strong>请求</strong>中，即：hash值不会带给服务器，即便是刷新</p>
-<h3 id="1-3-hash模式的特点"><a href="#1-3-hash模式的特点" class="headerlink" title="1.3 hash模式的特点"></a>1.3 hash模式的特点</h3><ol>
-<li>地址中一直带有#，不美观</li>
-<li>地址若通过第三方手机app分享，app校验严格的话地址会被标记为不合法</li>
-<li>兼容性较好</li>
-</ol>
-<hr>
-<h2 id="2-history模式"><a href="#2-history模式" class="headerlink" title="2. history模式"></a>2. history模式</h2><ul>
-<li>相较于hash模式只能改变#后的URL片段，history模式给了前端自由，整个URL都可以修改</li>
-</ul>
-<h3 id="2-1-history模式的特点"><a href="#2-1-history模式的特点" class="headerlink" title="2.1 history模式的特点"></a>2.1 history模式的特点</h3><ol>
-<li>地址干净美观</li>
-<li>兼容性相比hash模式较差</li>
-<li>应用部署上线需要后端支持以解决页面服务端404的问题。</li>
-</ol>
-<h3 id="2-2-解决history模式404问题"><a href="#2-2-解决history模式404问题" class="headerlink" title="2.2 解决history模式404问题"></a>2.2 解决history模式404问题</h3><p>history模式害怕的就是给服务器发送请求，比如刷新的时候是实实在在的请求服务器，刷新的时候如果服务器中没有URL对应的资源则会报错404.<br>对于niginx来说可以用以下方式解决</p>
-<pre class="line-numbers language-none"><code class="language-none">location &#x2F; &#123;
-  try_files $uri $uri&#x2F; &#x2F;index.html;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>对于 Node.js/Express，考虑使用 connect-history-api-fallback 中间件<br>(解决方式除了ngingx，其他暂不是特别熟悉如何使用，后面如果学到了会补充上来。)</p>
+                <h1 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick()"></a>$nextTick()</h1><h2 id="1-什么是-nextTick"><a href="#1-什么是-nextTick" class="headerlink" title="1.什么是$nextTick()"></a>1.什么是$nextTick()</h2><p>简而言之，就是我们更新了页面的数据，vue会去自动重新渲染数据涉及到的dom。$nextTick()会返回一个Promise,then里面就是这个dom渲染之后的回调。</p>
+<h2 id="2-什么时候会用到？"><a href="#2-什么时候会用到？" class="headerlink" title="2.什么时候会用到？"></a>2.什么时候会用到？</h2><p>我做的项目中一个很典型的例子就是，组件间有相当多的通信。比如A组件的一个值改变了，A组件通知B组件，B组件更新一部分的值，然后<strong>在B组件更新完自己的状态后</strong>主组件再去调用接口，入参包括B组件更新后的这部分值。这时主组件中就一定要写<code>await this.$refs.B.$nextTick()</code>,意思就是等B组件更新完数据再去使用。不然这个接口的入参就还是更新之前的，会出现问题。</p>
 
                 
             </div>
@@ -442,7 +420,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Sage-scq.github.io/vue-lu-you-de-liang-chong-mo-shi/">https://Sage-scq.github.io/vue-lu-you-de-liang-chong-mo-shi/</a>
+                    <a href="https://Sage-scq.github.io/nexttick-de-yun-yong/">https://Sage-scq.github.io/nexttick-de-yun-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -484,8 +462,8 @@
                                     <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
-                                <a href="/tags/VUE/">
-                                    <span class="chip bg-color">VUE</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
                         </div>
@@ -655,77 +633,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/han-shu-fang-dou-yu-jie-liu/">
+                <a href="/nexttick-de-yun-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="函数防抖与节流">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="$nextTick()的运用">
                         
-                        <span class="card-title">函数防抖与节流</span>
+                        <span class="card-title">$nextTick()的运用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            函数防抖与节流的概述以及lodash的运用
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    前端知识
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/vue-quan-ju-shi-jian-zong-xian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="VUE全局事件总线">
-                        
-                        <span class="card-title">VUE全局事件总线</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            VUE中全局事件总线的注册与使用
+                            什么是闭包，闭包是如何产生的，闭包的作用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-29
                             </span>
                         <span class="publish-author">
                             
@@ -739,6 +669,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -746,8 +677,57 @@
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/VUE/">
-                        <span class="chip bg-color">VUE</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/shu-ju-jie-gou-yu-suan-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="数据结构与算法">
+                        
+                        <span class="card-title">数据结构与算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    前端学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
                     </a>
                     
                 </div>
